@@ -45,7 +45,7 @@ function getTimer(){
 				var addResult = Map.AddFeatureXY(updaters.Fields(2).Value, updaters.Fields(3).Value, true);
 
 				if (!addResult){
-					Application.MessageBox ("You can not open add another point while you have the form open");
+					Application.MessageBox (ThisEvent.Name  + " - You can't open/add another point while you have the form open");
 				}
 			}
 		
@@ -349,7 +349,7 @@ function onFeatureAdded( objEvent ){
 	}
 
 	if (!addResult){
-		Application.MessageBox ("You can not open add another point while you have the form open");
+		Application.MessageBox (ThisEvent.Name  + " - You can't open/add another point while you have the form open");
 	}
 
 	Application.Timer.Enabled = true;
