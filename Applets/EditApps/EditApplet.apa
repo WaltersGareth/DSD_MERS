@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ArcPad>
+	<APPLET name="EditApplet">
+		<SYSTEMOBJECTS>
+			<MAP onopen="initiateTimer();"/>
+			<APPLICATION ontimer="getTimer();"/>
+			<GPS onposition="setLastValidGpsFix();"/>
+		</SYSTEMOBJECTS>
+		<FORMS/>
+	</APPLET>
+	<SCRIPT src="EditApplet.js" language="JScript"/>
+</ArcPad>

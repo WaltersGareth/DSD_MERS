@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ArcPad>
+	<CONFIG>
+		<TOOLBARS align="top">
+			<MAPNAVIGATOR style="0" horzalignment="left" tintcolor="0,20,40" backgroundcolor="SteelBlue" transparency="0.0" buttonsize="0">
+				<TOOLBUTTON command="modepan" useonce="true"/>
+				<TOOLBUTTON command="modezoomin" useonce="true"/>
+				<TOOLBUTTON command="modezoomout" useonce="true" flip="true"/>
+				<TOOLBUTTON command="zoomfullextent"/>
+			</MAPNAVIGATOR>
+		</TOOLBARS>
+	</CONFIG>
+</ArcPad>

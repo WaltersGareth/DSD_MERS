@@ -1,0 +1,90 @@
+<ArcPad>
+	<MAP name="">
+		<COMMENTS/>
+		<PROPERTIES>
+			<ENVELOPE minx="63.15957821611" miny="-62.4054670611691" maxx="217.986727393077" maxy="8.13588419569964"/>
+			<COORDSYS string="GEOGCS[&quot;GCS_WGS_1984&quot;,DATUM[&quot;D_WGS_1984&quot;,SPHEROID[&quot;WGS_1984&quot;,6378137,298.257223563]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
+			<SNAPPING tolerance="5"/>
+		</PROPERTIES>
+		<BOOKMARKS>
+			<BOOKMARK name="Cooper" minx="137.787144531232" miny="-28.0831761859794" maxx="143.512891366308" maxy="-25.5417219771985"/>
+		</BOOKMARKS>
+		<LAYER name="Lines" visible="false" identify="true" quickcapture="true" quickcapturelabel="Capture Lines" quickdraw="1">
+			<DATASET name="C:\DSD_MERS\DATA\AXFs\Lines_WGS\Lines_WGS.axf|1|Lines"/>
+			<METADATA/>
+			<SYMBOLOGY>
+				<SIMPLELABELRENDERER field="NAME" rotationfield="" visible="false" expression="" language="">
+					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="7"/>
+				</SIMPLELABELRENDERER>
+			</SYMBOLOGY>
+			<SNAPPING vertex="false" edge="false" end="false"/>
+		</LAYER>
+		<LAYER name="AssessmentsWGS" identify="true" edit="true" quickcapture="true" quickcapturelabel="Capture AssessmentsWGS" quickdraw="1">
+			<DATASET name="C:\DSD_MERS\DATA\AXFs\Cooper_WGS\Cooper_WGS.axf|1|AssessmentsWGS"/>
+			<METADATA/>
+			<SYMBOLOGY>
+				<SIMPLELABELRENDERER field="Line" rotationfield="" visible="false" expression="" language="">
+					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="7"/>
+				</SIMPLELABELRENDERER>
+			</SYMBOLOGY>
+			<FIELDHISTORY>
+				<FIELDS repeat="true">
+					<FIELD name="Floodplain_Land"/>
+					<FIELD name="AssessorDate"/>
+					<FIELD name="Dunes_Land"/>
+					<FIELD name="Gypcrete_Veg"/>
+					<FIELD name="y"/>
+					<FIELD name="Line" value="02-VR1136"/>
+					<FIELD name="Northing"/>
+					<FIELD name="X_Line_LookDir"/>
+					<FIELD name="LandSurface"/>
+					<FIELD name="X"/>
+					<FIELD name="Moonplains_Land"/>
+					<FIELD name="Assessor" value=""/>
+					<FIELD name="Infrastructure"/>
+					<FIELD name="StonyPlains_Veg"/>
+					<FIELD name="Survey"/>
+					<FIELD name="Litter"/>
+					<FIELD name="Gibber_Land"/>
+					<FIELD name="Breakaways_Land"/>
+					<FIELD name="NativeVeg_Species"/>
+					<FIELD name="Saltlake_Land"/>
+					<FIELD name="X_Line"/>
+					<FIELD name="Uphole"/>
+					<FIELD name="Breakaways_Veg"/>
+					<FIELD name="SwalesSandplains_Veg"/>
+					<FIELD name="Campsite"/>
+					<FIELD name="Floodplain_Veg"/>
+					<FIELD name="Limestoneplains_Land"/>
+					<FIELD name="Limestoneplains_Veg"/>
+					<FIELD name="Gypcrete_Land"/>
+					<FIELD name="NativeVeg_Communities"/>
+					<FIELD name="GPSFIX"/>
+					<FIELD name="Notes" value=""/>
+					<FIELD name="PhotoLink" value="SE13DU-R2546_1466733929907"/>
+					<FIELD name="NonNativeVeg_AgIimpact"/>
+					<FIELD name="Easting"/>
+					<FIELD name="Wetlands_Land"/>
+					<FIELD name="Visual"/>
+					<FIELD name="Gibber_Veg"/>
+					<FIELD name="StonyPlains_Land"/>
+					<FIELD name="Dunes_Veg"/>
+					<FIELD name="SwalesSandplains_Land"/>
+				</FIELDS>
+			</FIELDHISTORY>
+			<SNAPPING vertex="false"/>
+		</LAYER>
+		<STATUSBAR visible="true"/>
+		<SCALEBAR visible="true"/>
+		<NORTHARROW visible="false"/>
+		<ROTATION/>
+		<MAPGRID quickdraw="0"/>
+		<TRACKLOG quickdraw="0"/>
+		<TOOLBARS>
+			<TOOLBAR name="Main" visible="true"/>
+			<TOOLBAR name="tlbrAGO" visible="true"/>
+			<TOOLBAR name="tlbProjectionTools" visible="true"/>
+		</TOOLBARS>
+		<REFPOINTS/>
+	</MAP>
+</ArcPad>

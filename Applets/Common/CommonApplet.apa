@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ArcPad>
+	<APPLET name="CommonApplet">
+		<SYSTEMOBJECTS>
+			<APPLICATION/>
+		</SYSTEMOBJECTS>
+	</APPLET>
+	<SCRIPT src="CommonApplet.js" language="JScript"/>
+</ArcPad>

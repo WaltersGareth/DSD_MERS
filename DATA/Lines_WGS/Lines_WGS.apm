@@ -1,0 +1,36 @@
+<ArcPad>
+	<MAP name="Lines_WGS">
+		<COMMENTS/>
+		<PROPERTIES>
+			<ENVELOPE minx="140.23608676" miny="-27.1278035988663" maxx="140.716424948" maxy="-26.77197703794"/>
+			<COORDSYS string="GEOGCS[&quot;GCS_WGS_1984&quot;,DATUM[&quot;D_WGS_1984&quot;,SPHEROID[&quot;WGS_1984&quot;,6378137,298.257223563]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
+			<SNAPPING tolerance="5"/>
+			<COORDSYS id="4326" string="GEOGCS[&quot;GCS_WGS_1984&quot;,DATUM[&quot;D_WGS_1984&quot;,SPHEROID[&quot;WGS_1984&quot;,6378137.0,298.257223563]],PRIMEM[&quot;Greenwich&quot;,0.0],UNIT[&quot;Degree&quot;,0.0174532925199433],AUTHORITY[&quot;EPSG&quot;,4326]]"/><COORDSYS id="4326" string="GEOGCS[&quot;GCS_WGS_1984&quot;,DATUM[&quot;D_WGS_1984&quot;,SPHEROID[&quot;WGS_1984&quot;,6378137.0,298.257223563]],PRIMEM[&quot;Greenwich&quot;,0.0],UNIT[&quot;Degree&quot;,0.0174532925199433],AUTHORITY[&quot;EPSG&quot;,4326]]"/></PROPERTIES>
+		<BOOKMARKS/>
+		<LAYER name="Lines" identify="true" quickcapture="true" quickcapturelabel="Capture Lines" quickdraw="1">
+			<DATASET name="Lines_WGS.axf|1|Lines"/>
+			<METADATA/>
+			<SYMBOLOGY>
+				<SIMPLELABELRENDERER field="NAME" rotationfield="" visible="false" expression="" language="">
+					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="7"/>
+				</SIMPLELABELRENDERER>
+			</SYMBOLOGY>
+			<SNAPPING vertex="false" edge="false" end="false"/>
+		</LAYER>
+		<STATUSBAR visible="true"/>
+		<SCALEBAR visible="true"/>
+		<NORTHARROW visible="false"/>
+		<ROTATION/>
+		<MAPGRID quickdraw="0"/>
+		<TRACKLOG quickdraw="0"/>
+		<TOOLBARS>
+			<TOOLBAR name="Main" visible="true"/>
+			<TOOLBAR name="Browse" visible="true"/>
+			<TOOLBAR name="Draw" visible="true"/>
+			<TOOLBAR name="QuickCapture" visible="true"/>
+			<TOOLBAR name="tlbrAGO" visible="true"/>
+			<TOOLBAR name="tlbProjectionTools" visible="true"/>
+		</TOOLBARS>
+		<REFPOINTS/>
+		<LAYER name="Lines" identify="true"><DATASET name="Lines_WGS.axf|1|Lines"/></LAYER><LAYER name="Lines" identify="true"><DATASET name="Lines_WGS.axf|1|Lines"/></LAYER></MAP>
+</ArcPad>

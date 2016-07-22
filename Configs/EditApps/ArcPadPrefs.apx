@@ -1,0 +1,66 @@
+<ArcPad>
+	<PREFERENCES>
+		<STARTUP quickstart="0"/>
+		<SCRIPTING language="VBScript"/>
+		<PATHS public="C:\Users\Public\Documents\ArcPad" data="C:\DSD_MERS\DATA" applets="C:\DSD_MERS\Applets\Common,C:\DSD_MERS\Applets\EditApps" styles="" extensions="" templates=""/>
+		<CONFIG file="C:\DSD_MERS\Configs\EditApps\ArcPad.apx"/>
+		<FONTS>
+			<LABEL font="Tahoma" fontsize="9" charset="ANSI" fontstyle="regular"/>
+		</FONTS>
+		<MAPGRID>
+			<SIMPLELINESYMBOL width="1"/>
+			<TEXTSYMBOL fontcolor="Black" font="Tahoma" fontstyle="regular" fontsize="9"/>
+		</MAPGRID>
+		<LOCATION/>
+		<ALERTS>
+			<ALERT name="nogpsdata" sound=""/>
+			<ALERT name="maxpdop" sound=""/>
+			<ALERT name="maxepe" sound=""/>
+			<ALERT name="nofix" sound=""/>
+			<ALERT name="notdgps" sound=""/>
+			<ALERT name="not3d" sound=""/>
+			<ALERT name="approachingdestination" sound=""/>
+			<ALERT name="dataratewarning" sound=""/>
+			<ALERT name="seriouserror" sound=""/>
+		</ALERTS>
+		<AUX>
+			<COMPORT port="1" baud="4800" dtrcontrol="enable" rtscontrol="enable"/>
+		</AUX>
+		<RANGEFINDER protocol="" observerreference="foresight" autoactivate="false" playalert="true" capturebutton="any">
+			<COMPORT port="1" baud="4800" dtrcontrol="enable" rtscontrol="enable"/>
+		</RANGEFINDER>
+		<CAMERA device="@SCA" quality="100" path="C:\DSD_MERS\Attachments" prefix="Photo" shortcut=""/>
+		<TRACKLOG name="C:\UserData\Documents\My ArcPad\\TrackLog.shp" interval="5"/>
+		<LOCALE lcid="00000c09" codepage="1252"/>
+		<DISPLAY dialogbuttonsize="2" menubuttonsize="6">
+			<MAPNAVIGATOR visible="false"/>
+			<SYSTEMTRAY/>
+			<TABBAR dock="top" applicationbutton="false"/>
+		</DISPLAY>
+		<STATUSBAR/>
+		<SERVER url="" username="" password="" bingkey=""/>
+		<LAYERS autopack="true" defaultbasemap="" adddefaultbasemap="true"/>
+		<DRAWING indexratio="0.25" priority="abovenormal"/>
+		<QUICKDRAW quality="1"/>
+		<EDITING/>
+		<NAVIGATION defaultmap=""/>
+		<GREEKING>
+			<POINT greeking="true" color="Gray" threshold1="0" threshold2="0" threshold3="0" threshold4="0"/>
+			<POLYLINE greeking="true" color="Gray" threshold1="2" threshold2="5" threshold3="9" threshold4="0"/>
+			<POLYGON greeking="true" color="Gray" threshold1="1" threshold2="2" threshold3="5" threshold4="9"/>
+			<MULTIPOINT greeking="true" color="Gray" threshold1="3" threshold2="8" threshold3="0" threshold4="0"/>
+		</GREEKING>
+		<GPS protocol="NMEA" datum="D_WGS_1984" initialize="" logfile="C:\DSD_MERS\DATA\GPS.log" northreference="true" priority="highest" delay="1000">
+			<COMPORT port="1" baud="4800" dtrcontrol="enable" rtscontrol="enable"/>
+			<HEIGHT units="9001" geoidseparation="0" antennaheight="0"/>
+			<QUALITYCONTROL level="0">
+				<PDOP/>
+				<EPE/>
+				<MODE/>
+			</QUALITYCONTROL>
+			<AVERAGING point="10" vertex="5"/>
+			<STREAMING interval="1" distanceinterval="10"/>
+			<DISPLAY coordys="dms" height="altitude_m" quality="PDOP" cog="true"/>
+		</GPS>
+	</PREFERENCES>
+</ArcPad>

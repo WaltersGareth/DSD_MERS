@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ArcPad>
+	<APPLET name="DSD">
+		<FORMS>
+			<FORM name="userLoginForm" caption="User Login" width="250" height="250" onload="" tabsvisible="false">
+				<PAGE name="PAGE1" caption="Page 1" sip="false" onvalidate="userLoginForm_SaveUser( ThisEvent.Object );" onquerycancel="LoginForm_OnQueryCancel();">
+					<IMAGEBOX name="imgLogo" x="74" y="169" width="107" height="60" defaultvalue="&quot;stateLogo.jpg&quot;" clickaction="none" tooltip="" group="true" tabstop="false" border="false" readonly="true" backgroundcolor="White"/>
+					<COMBOBOX name="cboUser" x="46" y="46" width="158" height="13" defaultvalue="" listtable="" listvaluefield="" listtextfield="" onvalidate="userLoginFrom_ValidateUser();" onchange="userLoginForm_SaveUser( ThisEvent.Object );" tooltip="" tabstop="true" border="false" sip="false" fontsize="12">
+						<LISTITEM value="Jack" text="Jack"/>
+						<LISTITEM value="Rob" text="Rob"/>
+						<LISTITEM value="Dragan" text="Dragan"/>
+					</COMBOBOX>
+					<LABEL name="lblWelcome" x="45" y="22" width="201" height="19" caption="Please select a user" tooltip="" group="true" border="false" fontsize="12"/>
+					<LABEL name="lblregion" x="45" y="79" width="197" height="16" caption="Please select a region" tooltip="" group="true" border="false" fontsize="12"/>
+					<COMBOBOX name="cboRegion" x="46" y="102" width="158" height="13" defaultvalue="" listtable="" listvaluefield="" listtextfield="" onvalidate="userLoginForm_ValidateRegion();" tooltip="" tabstop="true" border="false" sip="false" fontsize="12">
+						<LISTITEM value="Arckaringa" text="Arckaringa"/>
+						<LISTITEM value="Cooper" text="Cooper"/>
+						<LISTITEM value="Officer" text="Officer"/>
+						<LISTITEM value="Otway" text="Otway"/>
+						<LISTITEM value="Leigh Creek" text="Leigh Creek"/>
+					</COMBOBOX>
+				</PAGE>
+			</FORM>
+			<FORM name="frmSelectLine" caption="Select Line" width="400" height="400">
+				<PAGE onsetactive="loadLines( ThisEvent.Object );" name="PAGE1" caption="Page 1" sip="false">
+					<LISTBOX name="lstLines" x="19" y="12" width="348" height="377" defaultvalue="" listtable="" listvaluefield="" listtextfield="" onselchange="selectLines( ThisEvent.Object );" tooltip="" tabstop="true" border="true" sort="false" fontsize="12" operator="=" hscroll="false"/>
+				</PAGE>
+			</FORM>
+		</FORMS>
+		<SYSTEMOBJECTS>
+			<MAP onopen="map_OpenUserLoginForm(ThisEvent.Object);
+" onfeatureadded="//setGeometryForFeature( ThisEvent );"/>
+			<APPLICATION ontimer="//checkEditingStatus();"/>
+		</SYSTEMOBJECTS>
+		<TOOLBARS>
+			<TOOLBAR name="MapTools" caption="MapTools" visible="true" image="$bex" tlDropPt="">
+				<TOOLBUTTON command="addgpspoint"/>
+				<TOOLBUTTON name="tlDropPt" shortcut="" image="$pin1_red" onpointerup="setGeometryForFeature( ThisEvent );"/>
+				<TOOLBUTTON command="modeidentify"/>
+				<TOOLBUTTON name="tlBookmarkExtent" shortcut="" image="$maproll" onclick="getBookmarkExtent(Application.userProperties(&quot;bookmarkExtent&quot;));"/>
+				<TOOLBUTTON command="modepan"/>
+				<TOOLBUTTON command="centerongps"/>
+			</TOOLBAR>
+		</TOOLBARS>
+	</APPLET>
+	<SCRIPT src="DSD.js" language="JScript"/>
+</ArcPad>

@@ -1,0 +1,1 @@
+C:\Windows\explorer.exe shell:AppsFolder\19960BogdanB.QuickSoundRecorderFree_x30ak9vc46axe!App

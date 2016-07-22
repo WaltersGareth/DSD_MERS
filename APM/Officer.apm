@@ -1,0 +1,123 @@
+<ArcPad>
+	<MAP name="">
+		<COMMENTS/>
+		<PROPERTIES>
+			<ENVELOPE minx="128.593129656341" miny="-29.9185925257032" maxx="133.579398003008" maxy="-27.4710247732923"/>
+			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
+			<SNAPPING tolerance="5"/>
+		</PROPERTIES>
+		<BOOKMARKS/>
+		<LAYER name="AssessmentsWGS" identify="true" edit="true" quickcapture="true" quickcapturelabel="Capture AssessmentsWGS" quickdraw="1">
+			<DATASET name="C:\DSD_MERS\DATA\AXFs\Officer_WGS\Officer_WGS.axf|2|AssessmentsWGS"/>
+			<METADATA/>
+			<SYMBOLOGY>
+				<SIMPLELABELRENDERER field="LINE" rotationfield="" visible="false" expression="" language="">
+					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="7"/>
+				</SIMPLELABELRENDERER>
+			</SYMBOLOGY>
+			<FIELDHISTORY>
+				<FIELDS repeat="true">
+					<FIELD name="BREAKAWAYS_LAND"/>
+					<FIELD name="VISUAL"/>
+					<FIELD name="ASSESSOR" value=""/>
+					<FIELD name="Floodplain_Land"/>
+					<FIELD name="PHOTOLINK" value="OBE07-04_1466741450662"/>
+					<FIELD name="LIMESTONEPLAINS_LAND"/>
+					<FIELD name="AssessorDate"/>
+					<FIELD name="Dunes_Land"/>
+					<FIELD name="Gypcrete_Veg"/>
+					<FIELD name="y"/>
+					<FIELD name="DUNES_VEG"/>
+					<FIELD name="Line" value="OBE-10-54"/>
+					<FIELD name="Northing"/>
+					<FIELD name="X_Line_LookDir"/>
+					<FIELD name="LandSurface"/>
+					<FIELD name="X"/>
+					<FIELD name="Y"/>
+					<FIELD name="NATIVEVEG_SPECIES"/>
+					<FIELD name="Moonplains_Land"/>
+					<FIELD name="CAMPSITE"/>
+					<FIELD name="STONYPLAINS_LAND"/>
+					<FIELD name="SALTLAKE_LAND"/>
+					<FIELD name="LINE"/>
+					<FIELD name="Assessor" value="Dragan"/>
+					<FIELD name="NATIVEVEG_COMMUNITIES"/>
+					<FIELD name="GYPCRETE_LAND"/>
+					<FIELD name="STONYPLAINS_VEG"/>
+					<FIELD name="Infrastructure"/>
+					<FIELD name="INFRASTRUCTURE"/>
+					<FIELD name="StonyPlains_Veg"/>
+					<FIELD name="Survey"/>
+					<FIELD name="SWALESSANDPLAINS_VEG"/>
+					<FIELD name="Litter"/>
+					<FIELD name="Gibber_Land"/>
+					<FIELD name="Breakaways_Land"/>
+					<FIELD name="NativeVeg_Species"/>
+					<FIELD name="SURVEY"/>
+					<FIELD name="Saltlake_Land"/>
+					<FIELD name="BREAKAWAYS_VEG"/>
+					<FIELD name="WETLANDS_LAND"/>
+					<FIELD name="FLOODPLAIN_LAND"/>
+					<FIELD name="LITTER"/>
+					<FIELD name="X_LINE_LOOKDIR"/>
+					<FIELD name="X_Line"/>
+					<FIELD name="Uphole"/>
+					<FIELD name="Breakaways_Veg"/>
+					<FIELD name="SwalesSandplains_Veg"/>
+					<FIELD name="Campsite"/>
+					<FIELD name="GIBBER_VEG"/>
+					<FIELD name="Floodplain_Veg"/>
+					<FIELD name="Limestoneplains_Land"/>
+					<FIELD name="Limestoneplains_Veg"/>
+					<FIELD name="Gypcrete_Land"/>
+					<FIELD name="NativeVeg_Communities"/>
+					<FIELD name="GPSFIX"/>
+					<FIELD name="NOTES" value=""/>
+					<FIELD name="LIMESTONEPLAINS_VEG"/>
+					<FIELD name="FLOODPLAIN_VEG"/>
+					<FIELD name="UPHOLE"/>
+					<FIELD name="X_LINE"/>
+					<FIELD name="Notes" value="gps test clear"/>
+					<FIELD name="PhotoLink" value="OBE-10-54_1456368636383"/>
+					<FIELD name="NONNATIVEVEG_AGIIMPACT"/>
+					<FIELD name="NonNativeVeg_AgIimpact"/>
+					<FIELD name="MOONPLAINS_LAND"/>
+					<FIELD name="DUNES_LAND"/>
+					<FIELD name="EASTING"/>
+					<FIELD name="Easting"/>
+					<FIELD name="Wetlands_Land"/>
+					<FIELD name="LANDSURFACE"/>
+					<FIELD name="GYPCRETE_VEG"/>
+					<FIELD name="GIBBER_LAND"/>
+					<FIELD name="NORTHING"/>
+					<FIELD name="Visual"/>
+					<FIELD name="Gibber_Veg"/>
+					<FIELD name="StonyPlains_Land"/>
+					<FIELD name="SWALESSANDPLAINS_LAND"/>
+					<FIELD name="ASSESSORDATE"/>
+					<FIELD name="Dunes_Veg"/>
+					<FIELD name="SwalesSandplains_Land"/>
+				</FIELDS>
+			</FIELDHISTORY>
+			<SNAPPING vertex="false"/>
+		</LAYER>
+		<LAYER name="Lines" identify="true" quickcapture="true" quickcapturelabel="Capture Lines" quickdraw="1">
+			<DATASET name="C:\DSD_MERS\DATA\AXFs\Lines_WGS\Lines_WGS.axf|1|Lines"/>
+			<METADATA/>
+			<SYMBOLOGY>
+				<SIMPLELABELRENDERER field="NAME" rotationfield="" visible="false" expression="" language="">
+					<TEXTSYMBOL fontcolor="Black" font="Arial" fontstyle="regular" fontsize="8" horzalignment="center" vertalignment="center"/>
+				</SIMPLELABELRENDERER>
+			</SYMBOLOGY>
+			<SNAPPING vertex="false" edge="false" end="false"/>
+		</LAYER>
+		<STATUSBAR visible="true"/>
+		<SCALEBAR visible="true"/>
+		<NORTHARROW visible="false"/>
+		<ROTATION/>
+		<MAPGRID quickdraw="0"/>
+		<TRACKLOG quickdraw="0"/>
+		<TOOLBARS/>
+		<REFPOINTS/>
+	</MAP>
+</ArcPad>
