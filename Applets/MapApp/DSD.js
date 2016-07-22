@@ -4,7 +4,7 @@ var editType;
 var updaters;
 
 function map_OpenUserLoginForm( eventObj ) {
-	var objRecords = Map.EditLayer.Records;
+/*	var objRecords = Map.EditLayer.Records;
 
 	if ( objRecords.RecordCount > 0 ) {
 		objRecords.MoveFirst();
@@ -14,6 +14,7 @@ function map_OpenUserLoginForm( eventObj ) {
 		}
 		while ( !objRecords.EOF )
 	}
+*/
 
 	//Applets( "CommonApplet" ).Execute ( "loadXmlDom()" );
 	Applets("DSD").Forms("userLoginForm").show();
@@ -33,7 +34,7 @@ function userLoginForm_SaveUser( objPage ) {
 */
 	
 	//ADD DATASOURCE CODE TO UPDATE TEMPVALUES TABLE
-		var dsTemp = Application.CreateAppObject("DataSource");
+	/*	var dsTemp = Application.CreateAppObject("DataSource");
 		dsTemp.Open("C:\\DSD_MERS\\DATA\\TempValues.axf");
 
 		if ( dsTemp.IsOpen ) {
@@ -46,6 +47,7 @@ function userLoginForm_SaveUser( objPage ) {
 		}
 
 		dsTemp.Close();
+*/
 
 	//Update Bookmark
 	
@@ -70,6 +72,9 @@ function userLoginForm_SaveUser( objPage ) {
 	mapOpened = true;
 
 	Application.Run ("C:\\DSD_MERS\\ArcPad Apps\\" + regionName + ".lnk");
+	
+	Map.AddLayerFromFile("C:\\DSD_MERS\\DATA\\AXFs\\" + regionName + "\\SDE_DEFAULT_CSDLP_world.axf|1|MERRegApp_Assessments" );
+	Map.Layers("MERRegApp_Assessments").editable = true;
 }
 
 function userLoginFrom_ValidateUser(){
@@ -114,7 +119,7 @@ function setGeometryForFeature( objEvent ){
 			ty = GPS.Y;
 		}
 
-		var dsTemp = Application.CreateAppObject("DataSource");
+		/*var dsTemp = Application.CreateAppObject("DataSource");
 		dsTemp.Open("C:\\DSD_MERS\\DATA\\TempValues.axf");
 
 		if ( dsTemp.IsOpen ) {
@@ -125,7 +130,7 @@ function setGeometryForFeature( objEvent ){
 			}
 		}
 
-		dsTemp.Close();
+		dsTemp.Close();*/
 		
 		Map.AddFeatureXY(tx, ty, false);
 
