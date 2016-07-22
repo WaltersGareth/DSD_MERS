@@ -36,10 +36,12 @@ function getTimer(){
 			}
 
 			if (tempX !== updaters.Fields(2).Value && tempY !== updaters.Fields(3).Value ){
-
+				Console.print ("should be unique...");
 				Application.Timer.Enabled = false;
 				tempX = updaters.Fields(2).Value;
 				tempY = updaters.Fields(3).Value;
+
+				Console.print (tempX + ", " + tempY);
 
 				Map.CenterAtXY ( updaters.Fields(2).Value, updaters.Fields(3).Value);
 				var addResult = Map.AddFeatureXY(updaters.Fields(2).Value, updaters.Fields(3).Value, true);

@@ -54,9 +54,9 @@
 			<COMPORT port="1" baud="4800" dtrcontrol="enable" rtscontrol="enable"/>
 			<HEIGHT units="9001" geoidseparation="0" antennaheight="0"/>
 			<QUALITYCONTROL level="0">
+				<MODE/>
 				<PDOP/>
 				<EPE/>
-				<MODE/>
 			</QUALITYCONTROL>
 			<AVERAGING point="10" vertex="5"/>
 			<STREAMING interval="1" distanceinterval="10"/>
