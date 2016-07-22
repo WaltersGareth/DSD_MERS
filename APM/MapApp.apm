@@ -2,31 +2,21 @@
 	<MAP name="">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="128.411164338674" miny="-30.1274608320215" maxx="133.193136651622" maxy="-28.0111571582754"/>
+			<ENVELOPE minx="-2.16031746031746E-04" miny="-9.50793650793651E-05" maxx="-5.55555555555563E-06" maxy="9.98412698412698E-05"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 			<PROPERTY name="userName" value="Dragan"/>
 		</PROPERTIES>
 		<BOOKMARKS/>
-		<LAYER name="tempPoint.shp" identify="true" edit="true" quickcapture="true" quickcapturelabel="Capture tempPoint.shp" quickdraw="1">
-			<DATASET name="C:\DSD_MERS\DATA\tempPoint.shp"/>
+		<LAYER name="MERRegApp_Assessments" identify="true" edit="true" quickcapture="true" quickcapturelabel="Capture MERRegApp_Assessments" quickdraw="1">
+			<DATASET name="C:\DSD_MERS\DATA\AXFs\Cooper\SDE_DEFAULT_CSDLP_world.axf|1|MERRegApp_Assessments"/>
 			<METADATA/>
 			<SYMBOLOGY>
 				<SIMPLELABELRENDERER field="LINE" rotationfield="" visible="false" expression="" language="">
-					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="7"/>
+					<TEXTSYMBOL fontcolor="Black" font="Arial" fontstyle="regular" fontsize="8" vertalignment="bottom"/>
 				</SIMPLELABELRENDERER>
 			</SYMBOLOGY>
 			<SNAPPING vertex="false"/>
-		</LAYER>
-		<LAYER name="Lines" identify="true" quickcapture="true" quickcapturelabel="Capture Lines" quickdraw="1">
-			<DATASET name="C:\DSD_MERS\DATA\AXFs\Lines_WGS\Lines_WGS.axf|1|Lines"/>
-			<METADATA/>
-			<SYMBOLOGY>
-				<SIMPLELABELRENDERER field="NAME" rotationfield="" visible="false" expression="" language="">
-					<TEXTSYMBOL fontcolor="Black" font="Arial" fontstyle="regular" fontsize="8" horzalignment="center" vertalignment="center"/>
-				</SIMPLELABELRENDERER>
-			</SYMBOLOGY>
-			<SNAPPING vertex="false" edge="false" end="false"/>
 		</LAYER>
 		<STATUSBAR visible="true"/>
 		<SCALEBAR visible="true"/>
@@ -36,9 +26,8 @@
 		<TRACKLOG quickdraw="0"/>
 		<TOOLBARS>
 			<TOOLBAR name="Main" visible="true"/>
-			<TOOLBAR name="Browse" visible="true"/>
-			<TOOLBAR name="Draw" visible="true"/>
-			<TOOLBAR name="QuickCapture" visible="true"/>
+			<TOOLBAR name="Navigation" visible="true"/>
+			<TOOLBAR name="MapTools" visible="true"/>
 		</TOOLBARS>
 		<REFPOINTS/>
 	</MAP>
