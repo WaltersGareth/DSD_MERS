@@ -4,6 +4,12 @@ var editType;
 var updaters;
 
 function map_OpenUserLoginForm( eventObj ) {
+	deleteFeatures();
+
+	Applets("DSD").Forms("userLoginForm").show();
+}
+
+function deleteFeatures(){
 	var objRecords = Map.Layers("tempPoint").Records;
 
 	if ( objRecords.RecordCount > 0 ) {
@@ -12,10 +18,8 @@ function map_OpenUserLoginForm( eventObj ) {
 			objRecords.Delete();
 			objRecords.MoveNext();
 		}
-		while ( !objRecords.EOF )
+		while ( !objRecords.EOF );
 	}
-
-	Applets("DSD").Forms("userLoginForm").show();
 }
 
 function userLoginForm_SaveUser( objPage ) {
@@ -175,4 +179,20 @@ function checkEditingStatus() {
 		}
 
 		dsTemp.Close();
+}
+
+function copyFeaturesFromAXF(){
+	var dsTemp = Application.CreateAppObject("DataSource");
+	dsTemp.Open("C:\\DSD_MERS\\DATA\\AXFs\\" + Application.UserProperties("regionName") + "\\SDE_DEFAULT_CSDLP_world.axf");
+
+	deleteFeatures();
+
+	var rs = dsTemp.OpenLayer("MERREGAPP_ASSESSMENTS");
+	rs.MoveFirst();
+	while(!rs.EOF){
+		Map.AddFeatureXY(rs.Fields("SHAPE_X").Value, rs.Fields("SHAPE_Y").Value, false);
+		rs.MoveNext();
+	}
+
+	Map.Refresh();
 }

@@ -29,7 +29,7 @@
 		</FORMS>
 		<SYSTEMOBJECTS>
 			<MAP onopen="map_OpenUserLoginForm(ThisEvent.Object);" onfeatureadded="//setGeometryForFeature( ThisEvent );"/>
-			<APPLICATION ontimer="//checkEditingStatus();"/>
+			<APPLICATION ontimer="copyFeaturesFromAXF();"/>
 		</SYSTEMOBJECTS>
 		<TOOLBARS>
 			<TOOLBAR name="MapTools" caption="MapTools" visible="true" image="$bex" tlDropPt="">

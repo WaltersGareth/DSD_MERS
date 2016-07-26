@@ -5,7 +5,7 @@ var objFile;
 var objNewExpressionsXmlFile;
 var objFunctionsXMLDoc;
 
-var mapLayerName = "AssessmentsWGS";
+var mapLayerName = "MERRegApp_Assessments";
 var mapLayer = Map.Layers(mapLayerName);
 
 function loadXmlDom(){
@@ -323,7 +323,7 @@ function onFeatureAdded( objEvent ){
 
 
 	Map.Layers(mapLayerName).Records.Bookmark = Map.SelectionBookmark;
-	var ds = 	Map.Layers("AssessmentsWGS").DataSource;
+	var ds = 	Map.Layers(mapLayerName).DataSource;
 
 	if ( ds.IsOpen ) {
 		if ( GPS.IsValidFix ) {
