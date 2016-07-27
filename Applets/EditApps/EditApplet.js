@@ -5,7 +5,7 @@ var objFile;
 var objNewExpressionsXmlFile;
 var objFunctionsXMLDoc;
 
-var mapLayerName = "AssessmentsWGS";
+var mapLayerName = "MERRegApp_Assessments";
 var mapLayer = Map.Layers(mapLayerName);
 
 function loadXmlDom(){
@@ -36,16 +36,18 @@ function getTimer(){
 			}
 
 			if (tempX !== updaters.Fields(2).Value && tempY !== updaters.Fields(3).Value ){
-
+				Console.print ("should be unique...");
 				Application.Timer.Enabled = false;
 				tempX = updaters.Fields(2).Value;
 				tempY = updaters.Fields(3).Value;
+
+				Console.print (tempX + ", " + tempY);
 
 				Map.CenterAtXY ( updaters.Fields(2).Value, updaters.Fields(3).Value);
 				var addResult = Map.AddFeatureXY(updaters.Fields(2).Value, updaters.Fields(3).Value, true);
 
 				if (!addResult){
-					Application.MessageBox ("You can not open add another point while you have the form open");
+					Application.MessageBox (ThisEvent.Name  + " - You can't open/add another point while you have the form open");
 				}
 			}
 		
@@ -321,7 +323,7 @@ function onFeatureAdded( objEvent ){
 
 
 	Map.Layers(mapLayerName).Records.Bookmark = Map.SelectionBookmark;
-	var ds = 	Map.Layers("AssessmentsWGS").DataSource;
+	var ds = 	Map.Layers(mapLayerName).DataSource;
 
 	if ( ds.IsOpen ) {
 		if ( GPS.IsValidFix ) {
@@ -349,7 +351,7 @@ function onFeatureAdded( objEvent ){
 	}
 
 	if (!addResult){
-		Application.MessageBox ("You can not open add another point while you have the form open");
+		Application.MessageBox (ThisEvent.Name  + " - You can't open/add another point while you have the form open");
 	}
 
 	Application.Timer.Enabled = true;

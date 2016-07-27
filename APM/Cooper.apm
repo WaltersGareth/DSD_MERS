@@ -2,12 +2,12 @@
 	<MAP name="">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="-2.29898648648649E-04" miny="-1.00168918918919E-04" maxx="2.30236486486486E-04" maxy="9.9831081081081E-05"/>
+			<ENVELOPE minx="-2.28697251428977E-04" miny="-1.03188730505965E-04" maxx="2.31437883706158E-04" maxy="1.00448098228775E-04"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 		</PROPERTIES>
 		<BOOKMARKS/>
-		<LAYER name="MERRegApp_Assessments" identify="true" quickcapture="true" quickcapturelabel="Capture MERRegApp_Assessments" quickdraw="1">
+		<LAYER name="MERRegApp_Assessments" identify="true" edit="true" quickcapture="true" quickcapturelabel="Capture MERRegApp_Assessments" quickdraw="1">
 			<DATASET name="C:\DSD_MERS\DATA\AXFs\Cooper\SDE_DEFAULT_CSDLP_world.axf|1|MERRegApp_Assessments"/>
 			<METADATA/>
 			<SYMBOLOGY>
@@ -34,11 +34,11 @@
 		<MAPGRID quickdraw="0"/>
 		<TRACKLOG quickdraw="0"/>
 		<TOOLBARS>
+			<TOOLBAR name="Favorites" visible="true"/>
 			<TOOLBAR name="Main" visible="true"/>
 			<TOOLBAR name="Browse" visible="true"/>
 			<TOOLBAR name="Draw" visible="true"/>
 			<TOOLBAR name="QuickCapture" visible="true"/>
-			<TOOLBAR name="Navigation" visible="true"/>
 		</TOOLBARS>
 		<REFPOINTS/>
 	</MAP>

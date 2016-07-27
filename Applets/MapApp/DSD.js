@@ -4,7 +4,13 @@ var editType;
 var updaters;
 
 function map_OpenUserLoginForm( eventObj ) {
-	var objRecords = Map.EditLayer.Records;
+	deleteFeatures();
+
+	Applets("DSD").Forms("userLoginForm").show();
+}
+
+function deleteFeatures(){
+	var objRecords = Map.Layers("tempPoint").Records;
 
 	if ( objRecords.RecordCount > 0 ) {
 		objRecords.MoveFirst();
@@ -12,11 +18,8 @@ function map_OpenUserLoginForm( eventObj ) {
 			objRecords.Delete();
 			objRecords.MoveNext();
 		}
-		while ( !objRecords.EOF )
+		while ( !objRecords.EOF );
 	}
-
-	//Applets( "CommonApplet" ).Execute ( "loadXmlDom()" );
-	Applets("DSD").Forms("userLoginForm").show();
 }
 
 function userLoginForm_SaveUser( objPage ) {
@@ -24,14 +27,7 @@ function userLoginForm_SaveUser( objPage ) {
 	var regionName = objPage.Controls("cboRegion").Value;
 
 	Application.UserProperties("regionName") = regionName;
-/*
-	Applets( "CommonApplet" ).Execute ( "setTempValue( \"userName\", \"" + userName + "\" )");
-	Applets( "CommonApplet" ).Execute ( "setTempValue( \"newGeometryX\", 0)");
-	Applets( "CommonApplet" ).Execute ( "setTempValue( \"newGeometryY\", 0)");
-	Applets( "CommonApplet" ).Execute ( "setTempValue( \"region\", \"" + regionName + "\" )");	
-	Applets( "CommonApplet" ).Execute ( "setTempValue( \"editing\", \"False\" )");
-*/
-	
+
 	//ADD DATASOURCE CODE TO UPDATE TEMPVALUES TABLE
 		var dsTemp = Application.CreateAppObject("DataSource");
 		dsTemp.Open("C:\\DSD_MERS\\DATA\\TempValues.axf");
@@ -46,6 +42,7 @@ function userLoginForm_SaveUser( objPage ) {
 		}
 
 		dsTemp.Close();
+
 
 	//Update Bookmark
 	
@@ -70,6 +67,11 @@ function userLoginForm_SaveUser( objPage ) {
 	mapOpened = true;
 
 	Application.Run ("C:\\DSD_MERS\\ArcPad Apps\\" + regionName + ".lnk");
+	
+	//Map.AddLayerFromFile("C:\\DSD_MERS\\DATA\\AXFs\\" + regionName + "\\SDE_DEFAULT_CSDLP_world.axf|1|MERRegApp_Assessments" );
+	//Map.Layers("MERRegApp_Assessments").editable = false;
+
+	Toolbars("MapTools").item("modepan").click();
 }
 
 function userLoginFrom_ValidateUser(){
@@ -94,43 +96,35 @@ function LoginForm_OnQueryCancel(){
 }
 
 function setGeometryForFeature( objEvent ){
-		var tx;
-		var ty;
+	var tx;
+	var ty;
 
-		if ( objEvent.Name == "OnPointerUp"){
-			//Applets( "CommonApplet" ).Execute ( "setTempValue( \"editing\", \"True\" )");
-			//Applets( "CommonApplet" ).Execute ( "setTempValue( \"newGeometryX\",  Map.PointerX  )");
-			//Applets( "CommonApplet" ).Execute ( "setTempValue( \"newGeometryY\",  Map.PointerY  )");
+	if ( objEvent.Name == "OnPointerUp"){
+		tx = Map.PointerX;
+		ty = Map.PointerY;
+	}
+	else {
+		tx = GPS.X;
+		ty = GPS.Y;
+	}
 
-			tx = Map.PointerX;
-			ty = Map.PointerY;
+	var dsTemp = Application.CreateAppObject("DataSource");
+	dsTemp.Open("C:\\DSD_MERS\\DATA\\TempValues.axf");
+
+	if ( dsTemp.IsOpen ) {
+		updaters = dsTemp.Execute("SELECT [userName], [newGeometryX], [newGeometryY], [region] FROM [TEMPVALUES];");
+	
+		if (updaters){
+			var insertrs = dsTemp.Execute("UPDATE [TEMPVALUES] SET newGeometryX = " + tx +", newGeometryY = " + ty +";");
 		}
-		else {
-			//Applets( "CommonApplet" ).Execute ( "setTempValue( \"editing\", \"True\" )");
-			//Applets( "CommonApplet" ).Execute ( "setTempValue( \"newGeometryX\",  GPS.X )");
-			//Applets( "CommonApplet" ).Execute ( "setTempValue( \"newGeometryY\",  GPS.Y )");
+	}
 
-			tx = GPS.X;
-			ty = GPS.Y;
-		}
+	dsTemp.Close();
+	
+	Map.AddFeatureXY(tx, ty, false);
 
-		var dsTemp = Application.CreateAppObject("DataSource");
-		dsTemp.Open("C:\\DSD_MERS\\DATA\\TempValues.axf");
-
-		if ( dsTemp.IsOpen ) {
-			updaters = dsTemp.Execute("SELECT [userName], [newGeometryX], [newGeometryY], [region] FROM [TEMPVALUES];");
-		
-			if (updaters){
-				var insertrs = dsTemp.Execute("UPDATE [TEMPVALUES] SET newGeometryX = " + tx +", newGeometryY = " + ty +";");
-			}
-		}
-
-		dsTemp.Close();
-		
-		Map.AddFeatureXY(tx, ty, false);
-
-		Application.Timer.Interval = 5000;
-		Application.Timer.Enabled = true;
+	Application.Timer.Interval = 5000;
+	Application.Timer.Enabled = true;
 }
 
 
@@ -185,4 +179,20 @@ function checkEditingStatus() {
 		}
 
 		dsTemp.Close();
+}
+
+function copyFeaturesFromAXF(){
+	var dsTemp = Application.CreateAppObject("DataSource");
+	dsTemp.Open("C:\\DSD_MERS\\DATA\\AXFs\\" + Application.UserProperties("regionName") + "\\SDE_DEFAULT_CSDLP_world.axf");
+
+	deleteFeatures();
+
+	var rs = dsTemp.OpenLayer("MERREGAPP_ASSESSMENTS");
+	rs.MoveFirst();
+	while(!rs.EOF){
+		Map.AddFeatureXY(rs.Fields("SHAPE_X").Value, rs.Fields("SHAPE_Y").Value, false);
+		rs.MoveNext();
+	}
+
+	Map.Refresh();
 }
