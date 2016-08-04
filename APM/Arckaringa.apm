@@ -2,12 +2,12 @@
 	<MAP name="">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="-2.29898648648649E-04" miny="-1.00168918918919E-04" maxx="2.30236486486486E-04" maxy="9.9831081081081E-05"/>
+			<ENVELOPE minx="-2.37456923425001E-04" miny="-1.02637574049515E-04" maxx="2.39095242789288E-04" maxy="1.00999254685225E-04"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 		</PROPERTIES>
 		<BOOKMARKS/>
-		<LAYER name="MERRegApp_Assessments" identify="true" quickcapture="true" quickcapturelabel="Capture MERRegApp_Assessments" quickdraw="1">
+		<LAYER name="MERRegApp_Assessments" identify="true" edit="true" quickcapture="true" quickcapturelabel="Capture MERRegApp_Assessments" quickdraw="1">
 			<DATASET name="C:\DSD_MERS\DATA\AXFs\Arckaringa\SDE_DEFAULT_CSDLP_world.axf|1|MERRegApp_Assessments"/>
 			<METADATA/>
 			<SYMBOLOGY>
@@ -17,12 +17,12 @@
 			</SYMBOLOGY>
 			<SNAPPING vertex="false"/>
 		</LAYER>
-		<LAYER name="Lines" identify="true" quickcapture="true" quickcapturelabel="Capture Lines" quickdraw="1">
-			<DATASET name="C:\DSD_MERS\DATA\AXFs\Lines_WGS\Lines_WGS.axf|1|Lines"/>
+		<LAYER name="Seismic Lines" identify="true" quickcapture="true" quickcapturelabel="Capture Seismic Lines" quickdraw="1">
+			<DATASET name="c:\DSD_MERS\DATA\AXFs\SIS_MERRegApp_SeismicLines_P\SIS_MERRegApp_SeismicLines_P.axf|1|Seismic Lines"/>
 			<METADATA/>
 			<SYMBOLOGY>
 				<SIMPLELABELRENDERER field="NAME" rotationfield="" visible="false" expression="" language="">
-					<TEXTSYMBOL fontcolor="Black" font="Arial" fontstyle="regular" fontsize="8" horzalignment="center" vertalignment="center"/>
+					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="8"/>
 				</SIMPLELABELRENDERER>
 			</SYMBOLOGY>
 			<SNAPPING vertex="false" edge="false" end="false"/>

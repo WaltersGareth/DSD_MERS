@@ -1,24 +1,19 @@
 <ArcPad>
-	<MAP name="Lines">
+	<MAP name="">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="138.06657402467" miny="-28.2250035302981" maxx="143.19155498671" maxy="-25.9502078030219"/>
-			<COORDSYS string="GEOGCS[&quot;GCS_WGS_1984&quot;,DATUM[&quot;D_WGS_1984&quot;,SPHEROID[&quot;WGS_1984&quot;,6378137,298.257223563]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
+			<ENVELOPE minx="138.596742138139" miny="-34.9289006582608" maxx="138.616189878483" maxy="-34.9205903903608"/>
+			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 			<PROPERTY name="userName" value="Dragan"/>
 		</PROPERTIES>
-		<BOOKMARKS>
-			<BOOKMARK name="Cooper" minx="138.020013878206" miny="-27.9439602260493" maxx="143.115024191345" maxy="-25.689118847258"/>
-			<BOOKMARK name="Arckaringa" minx="131.421600287782" miny="-29.7617242121129" maxx="138.406802576269" maxy="-26.6703618416207"/>
-			<BOOKMARK name="Officer" minx="127.320301685632" miny="-30.4935290210569" maxx="134.305503974119" maxy="-27.4021666505647"/>
-			<BOOKMARK name="Otway" minx="134.262624518175" miny="-39.700353829372" maxx="144.895689519509" maxy="-34.9945979084162"/>
-		</BOOKMARKS>
-		<LAYER name="Lines" identify="true" quickcapture="true" quickcapturelabel="Capture Lines" quickdraw="1">
-			<DATASET name="C:\DSD_MERS\DATA\AXFs\Lines_WGS\Lines_WGS.axf|1|Lines"/>
+		<BOOKMARKS/>
+		<LAYER name="Seismic Lines" identify="true" quickcapture="true" quickcapturelabel="Capture Seismic Lines" quickdraw="1">
+			<DATASET name="C:\DSD_MERS\DATA\AXFs\SIS_MERRegApp_SeismicLines_P\SIS_MERRegApp_SeismicLines_P.axf|1|Seismic Lines"/>
 			<METADATA/>
 			<SYMBOLOGY>
 				<SIMPLELABELRENDERER field="NAME" rotationfield="" visible="false" expression="" language="">
-					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="7"/>
+					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="8"/>
 				</SIMPLELABELRENDERER>
 			</SYMBOLOGY>
 			<SNAPPING vertex="false" edge="false" end="false"/>
@@ -30,7 +25,6 @@
 		<MAPGRID quickdraw="0"/>
 		<TRACKLOG quickdraw="0"/>
 		<TOOLBARS>
-			<TOOLBAR name="Favorites" visible="true"/>
 			<TOOLBAR name="Main" visible="true"/>
 			<TOOLBAR name="Browse" visible="true"/>
 			<TOOLBAR name="Draw" visible="true"/>
