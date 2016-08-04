@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ArcPad>
 	<APPLET name="DSD">
 		<FORMS>
@@ -28,20 +28,21 @@
 			</FORM>
 		</FORMS>
 		<SYSTEMOBJECTS>
-			<MAP onopen="map_OpenUserLoginForm(ThisEvent.Object);
-" onfeatureadded="//setGeometryForFeature( ThisEvent );"/>
-			<APPLICATION ontimer="//checkEditingStatus();"/>
+			<MAP onopen="map_OpenUserLoginForm(ThisEvent.Object);" onfeatureadded="//setGeometryForFeature( ThisEvent );"/>
+			<APPLICATION ontimer="copyFeaturesFromAXF();"/>
 		</SYSTEMOBJECTS>
 		<TOOLBARS>
 			<TOOLBAR name="MapTools" caption="MapTools" visible="true" image="$bex" tlDropPt="">
+				<TOOLBUTTON command="modepan"/>
 				<TOOLBUTTON command="addgpspoint"/>
 				<TOOLBUTTON name="tlDropPt" shortcut="" image="$pin1_red" onpointerup="setGeometryForFeature( ThisEvent );"/>
 				<TOOLBUTTON command="modeidentify"/>
 				<TOOLBUTTON name="tlBookmarkExtent" shortcut="" image="$maproll" onclick="getBookmarkExtent(Application.userProperties(&quot;bookmarkExtent&quot;));"/>
-				<TOOLBUTTON command="modepan"/>
 				<TOOLBUTTON command="centerongps"/>
 			</TOOLBAR>
 		</TOOLBARS>
+		<MAPNAVIGATOR>
+		</MAPNAVIGATOR>
 	</APPLET>
 	<SCRIPT src="DSD.js" language="JScript"/>
 </ArcPad>
