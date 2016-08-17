@@ -2,33 +2,28 @@
 	<MAP name="SIS_MERRegApp_SeismicLines_P">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="138.307018044108" miny="-28.6142835042843" maxx="141.897431864256" maxy="-26.9784422206921"/>
+			<ENVELOPE minx="138.597465158127" miny="-34.925150759027" maxx="138.606190604993" maxy="-34.9206892036716"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 			<PROPERTY name="userName" value="Dragan"/>
 		</PROPERTIES>
 		<BOOKMARKS/>
 		<LAYER name="tempPoint.shp" identify="true" edit="true" quickcapture="true" quickcapturelabel="Capture tempPoint.shp" quickdraw="1">
-			<DATASET name="C:\DSD_MERS\DATA\tempPoint.shp"/>
+			<DATASET name="C:\DSD_MERS\DATA\TempData\tempPoint.shp"/>
 			<METADATA/>
 			<SYMBOLOGY>
 				<SIMPLELABELRENDERER field="LINE" rotationfield="" visible="false" expression="" language="">
 					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="7"/>
 				</SIMPLELABELRENDERER>
 			</SYMBOLOGY>
-			<FIELDHISTORY>
-				<FIELDS>
-					<FIELD name="LINE" value=""/>
-				</FIELDS>
-			</FIELDHISTORY>
 			<SNAPPING vertex="false"/>
 		</LAYER>
 		<LAYER name="Seismic Lines" identify="true" quickcapture="true" quickcapturelabel="Capture Seismic Lines" quickdraw="1">
-			<DATASET name="C:\DSD_MERS\DATA\AXFs\TestCooper\BackgroundLayers.axf|1|SeismicLines"/>
+			<DATASET name="C:\DSD_MERS\DATA\AXFs\SIS_MERRegApp_SeismicLines_P\SIS_MERRegApp_SeismicLines_P.axf|1|Seismic Lines"/>
 			<METADATA/>
 			<SYMBOLOGY>
 				<SIMPLELABELRENDERER field="NAME" rotationfield="" visible="false" expression="" language="">
-					<TEXTSYMBOL fontcolor="Black" font="Arial" fontstyle="regular" fontsize="8" horzalignment="center" vertalignment="center"/>
+					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="8"/>
 				</SIMPLELABELRENDERER>
 			</SYMBOLOGY>
 			<SNAPPING vertex="false" edge="false" end="false"/>
@@ -40,9 +35,11 @@
 		<MAPGRID quickdraw="0"/>
 		<TRACKLOG quickdraw="0"/>
 		<TOOLBARS>
-			<TOOLBAR name="Favorites" visible="true"/>
 			<TOOLBAR name="Main" visible="true"/>
-			<TOOLBAR name="MapTools" visible="true"/>
+			<TOOLBAR name="Browse" visible="true"/>
+			<TOOLBAR name="Draw" visible="true"/>
+			<TOOLBAR name="QuickCapture" visible="true"/>
+			<TOOLBAR name="Navigation" visible="true"/>
 		</TOOLBARS>
 		<REFPOINTS/>
 	</MAP>

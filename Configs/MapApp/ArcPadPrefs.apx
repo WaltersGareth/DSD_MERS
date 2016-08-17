@@ -11,8 +11,8 @@
 			<SIMPLELINESYMBOL width="1"/>
 			<TEXTSYMBOL fontcolor="Black" font="Tahoma" fontstyle="regular" fontsize="9"/>
 		</MAPGRID>
-		<GPS protocol="@ALS" datum="D_WGS_1984" initialize="" logfile="C:\UserData\Documents\GPS.log" northreference="true" priority="highest" delay="1000">
-			<COMPORT port="8193" baud="4800" dtrcontrol="enable" rtscontrol="enable"/>
+		<GPS protocol="NMEA" datum="D_WGS_1984" initialize="" logfile="C:\UserData\Documents\GPS.log" northreference="true" priority="highest" delay="1000" handle="1116" autoactivate="true">
+			<COMPORT port="3" baud="4800" dtrcontrol="enable" rtscontrol="enable"/>
 			<HEIGHT units="9001" geoidseparation="0" antennaheight="0"/>
 			<QUALITYCONTROL level="0">
 				<MODE/>

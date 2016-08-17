@@ -2,7 +2,7 @@
 	<MAP name="">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="138.202686559441" miny="-28.6236109344929" maxx="142.104617933638" maxy="-26.8967770756772"/>
+			<ENVELOPE minx="-2.36555875510247E-04" miny="-1.03538621964272E-04" maxx="2.39996290704042E-04" maxy="1.00098206770468E-04"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 		</PROPERTIES>
@@ -18,11 +18,11 @@
 			<SNAPPING vertex="false"/>
 		</LAYER>
 		<LAYER name="Seismic Lines" identify="true" quickcapture="true" quickcapturelabel="Capture Seismic Lines" quickdraw="1">
-			<DATASET name="C:\DSD_MERS\DATA\AXFs\TestCooper\BackgroundLayers.axf|1|SeismicLines"/>
+			<DATASET name="C:\DSD_MERS\DATA\AXFs\SIS_MERRegApp_SeismicLines_P\SIS_MERRegApp_SeismicLines_P.axf|1|Seismic Lines"/>
 			<METADATA/>
 			<SYMBOLOGY>
 				<SIMPLELABELRENDERER field="NAME" rotationfield="" visible="false" expression="" language="">
-					<TEXTSYMBOL fontcolor="Black" font="Arial" fontstyle="regular" fontsize="8" horzalignment="center" vertalignment="center"/>
+					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="8"/>
 				</SIMPLELABELRENDERER>
 			</SYMBOLOGY>
 			<SNAPPING vertex="false" edge="false" end="false"/>
@@ -34,11 +34,11 @@
 		<MAPGRID quickdraw="0"/>
 		<TRACKLOG quickdraw="0"/>
 		<TOOLBARS>
-			<TOOLBAR name="Favorites" visible="true"/>
 			<TOOLBAR name="Main" visible="true"/>
 			<TOOLBAR name="Browse" visible="true"/>
 			<TOOLBAR name="Draw" visible="true"/>
 			<TOOLBAR name="QuickCapture" visible="true"/>
+			<TOOLBAR name="Navigation" visible="true"/>
 		</TOOLBARS>
 		<REFPOINTS/>
 	</MAP>
