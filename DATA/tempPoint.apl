@@ -6,9 +6,14 @@
 				<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="7"/>
 			</SIMPLELABELRENDERER>
 			<SIMPLERENDERER>
-				<SIMPLEMARKERSYMBOL color="DarkSeaGreen" width="5" type="x" outlinewidth="1"/>
+				<SIMPLEMARKERSYMBOL color="Green" width="5" outlinewidth="1"/>
 			</SIMPLERENDERER>
 		</SYMBOLOGY>
 		<QUERY where=""/>
+		<FIELDHISTORY>
+			<FIELDS>
+				<FIELD name="LINE" value=""/>
+			</FIELDS>
+		</FIELDHISTORY>
 	</LAYER>
 </ArcPad>

@@ -50,13 +50,13 @@
 			<POLYGON greeking="true" color="Gray" threshold1="1" threshold2="2" threshold3="5" threshold4="9"/>
 			<MULTIPOINT greeking="true" color="Gray" threshold1="3" threshold2="8" threshold3="0" threshold4="0"/>
 		</GREEKING>
-		<GPS protocol="NMEA" datum="D_WGS_1984" initialize="" logfile="C:\DSD_MERS\DATA\GPS.log" northreference="true" priority="highest" delay="1000">
-			<COMPORT port="1" baud="4800" dtrcontrol="enable" rtscontrol="enable"/>
+		<GPS protocol="@ALS" datum="D_WGS_1984" initialize="" logfile="C:\DSD_MERS\DATA\GPS.log" northreference="true" priority="highest" delay="1000">
+			<COMPORT port="8193" baud="4800" dtrcontrol="enable" rtscontrol="enable"/>
 			<HEIGHT units="9001" geoidseparation="0" antennaheight="0"/>
 			<QUALITYCONTROL level="0">
+				<MODE/>
 				<PDOP/>
 				<EPE/>
-				<MODE/>
 			</QUALITYCONTROL>
 			<AVERAGING point="10" vertex="5"/>
 			<STREAMING interval="1" distanceinterval="10"/>
