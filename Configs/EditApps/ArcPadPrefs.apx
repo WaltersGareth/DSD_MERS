@@ -32,7 +32,7 @@
 		<CAMERA device="@SCA" quality="100" path="C:\DSD_MERS\Attachments" prefix="Photo" shortcut=""/>
 		<TRACKLOG name="C:\UserData\Documents\My ArcPad\\TrackLog.shp" interval="5"/>
 		<LOCALE lcid="00000c09" codepage="1252"/>
-		<DISPLAY dialogbuttonsize="2" menubuttonsize="6">
+		<DISPLAY dialogbuttonsize="2" menubuttonsize="6" buttonsize="1">
 			<MAPNAVIGATOR visible="false"/>
 			<SYSTEMTRAY/>
 			<TABBAR dock="top" applicationbutton="false"/>
@@ -54,9 +54,9 @@
 			<COMPORT port="1" baud="4800" dtrcontrol="enable" rtscontrol="enable"/>
 			<HEIGHT units="9001" geoidseparation="0" antennaheight="0"/>
 			<QUALITYCONTROL level="0">
+				<MODE/>
 				<PDOP/>
 				<EPE/>
-				<MODE/>
 			</QUALITYCONTROL>
 			<AVERAGING point="10" vertex="5"/>
 			<STREAMING interval="1" distanceinterval="10"/>

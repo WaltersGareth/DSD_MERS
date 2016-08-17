@@ -62,15 +62,15 @@ function getTimer(){
 
 function getSurveyDetails() {
 
-	var result = Map.Layers("Seismic Lines").Records.findNearestXY(tempX, tempY);
+	var result = Map.Layers("Lines").Records.findNearestXY(tempX, tempY);
 
 	if ( result ){
 		//Console.print("testing...");
-		Map.Layers("Seismic Lines").Records.Bookmark = result;
-		Application.UserProperties("LINE") = Map.Layers("Seismic Lines").Records.Fields("LINE").value;
-		Application.UserProperties("SURVEY") = Map.Layers("Seismic Lines").Records.Fields("SURVEY").value;
-		Application.UserProperties("NAME") = Map.Layers("Seismic Lines").Records.Fields("NAME").value;
-		Application.UserProperties("OPERATOR") = Map.Layers("Seismic Lines").Records.Fields("OPERATOR").value;
+		Map.Layers("Lines").Records.Bookmark = result;
+		Application.UserProperties("LINE") = Map.Layers("Lines").Records.Fields("LINE").value;
+		Application.UserProperties("SURVEY") = Map.Layers("Lines").Records.Fields("SURVEY").value;
+		Application.UserProperties("NAME") = Map.Layers("Lines").Records.Fields("NAME").value;
+		Application.UserProperties("OPERATOR") = Map.Layers("Lines").Records.Fields("OPERATOR").value;
 	}
 	else {
 		Application.MessageBox ("There are no surveys in the results.", apOkOnly)
@@ -265,9 +265,9 @@ function page_SetActive( objPage ){
 		}
 	}
 
-	var ds = Map.Layers("Seismic Lines").DataSource;
+	var ds = Map.Layers("Lines").DataSource;
 	if ( ds.IsOpen ) {
-		var sqlStr = "SELECT [LINE] FROM [SeismicLines] WHERE [SURVEY] = '" + Application.UserProperties("SURVEY") + "';" ;
+		var sqlStr = "SELECT [LINE] FROM [LINES] WHERE [SURVEY] = '" + Application.UserProperties("SURVEY") + "';" ;
 		var pRS = ds.Execute( sqlStr );
 
 		if ( pRS !== null) {
