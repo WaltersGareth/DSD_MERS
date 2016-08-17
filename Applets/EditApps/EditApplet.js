@@ -267,7 +267,7 @@ function page_SetActive( objPage ){
 
 	var ds = Map.Layers("Seismic Lines").DataSource;
 	if ( ds.IsOpen ) {
-		var sqlStr = "SELECT [LINE] FROM [Seismic Lines] WHERE [SURVEY] = '" + Application.UserProperties("SURVEY") + "';" ;
+		var sqlStr = "SELECT [LINE] FROM [SeismicLines] WHERE [SURVEY] = '" + Application.UserProperties("SURVEY") + "';" ;
 		var pRS = ds.Execute( sqlStr );
 
 		if ( pRS !== null) {

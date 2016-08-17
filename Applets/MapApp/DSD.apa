@@ -30,11 +30,12 @@
 		<SYSTEMOBJECTS>
 			<MAP onopen="map_OpenUserLoginForm(ThisEvent.Object);" onfeatureadded="//setGeometryForFeature( ThisEvent );"/>
 			<APPLICATION ontimer="copyFeaturesFromAXF();"/>
+			<GPS onsentence="Application.toolbars(&quot;MapTools&quot;).item(&quot;tlAddGpsPoint&quot;).enabled = GPS.isValidFix;"/>
 		</SYSTEMOBJECTS>
 		<TOOLBARS>
 			<TOOLBAR name="MapTools" caption="MapTools" visible="true" image="$bex" tlDropPt="">
 				<TOOLBUTTON command="modepan"/>
-				<TOOLBUTTON command="addgpspoint"/>
+				<TOOLBUTTON name="tlAddGpsPoint" shortcut="" image="@addgpspoint" onclick="setGeometryForFeature( ThisEvent );"/>
 				<TOOLBUTTON name="tlDropPt" shortcut="" image="$pin1_red" onpointerup="setGeometryForFeature( ThisEvent );"/>
 				<TOOLBUTTON command="modeidentify"/>
 				<TOOLBUTTON name="tlBookmarkExtent" shortcut="" image="$maproll" onclick="getBookmarkExtent(Application.userProperties(&quot;bookmarkExtent&quot;));"/>

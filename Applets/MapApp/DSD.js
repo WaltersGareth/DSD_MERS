@@ -104,8 +104,10 @@ function setGeometryForFeature( objEvent ){
 		ty = Map.PointerY;
 	}
 	else {
-		tx = GPS.X;
-		ty = GPS.Y;
+		if ( GPS.isValidFix ){
+			tx = GPS.X;
+			ty = GPS.Y;
+		}
 	}
 
 	var dsTemp = Application.CreateAppObject("DataSource");
