@@ -2,13 +2,13 @@
 	<MAP name="Lines_WGS">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="128.309676683112" miny="-30.2450283214337" maxx="133.106573586983" maxy="-28.1221196394331"/>
+			<ENVELOPE minx="128.31593895061" miny="-30.2512905889324" maxx="133.112835854482" maxy="-28.1283819069316"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 			<PROPERTY name="userName" value="Dragan"/>
 		</PROPERTIES>
 		<BOOKMARKS/>
-		<LAYER name="tempPoint.shp" identify="true" edit="true" quickcapture="true" quickcapturelabel="Capture tempPoint.shp" quickdraw="1">
+		<LAYER name="tempPoint.shp" identify="true" edit="true" quickcapture="true" quickcapturelabel="Capture tempPoint.shp" showeditform="false" quickdraw="1">
 			<DATASET name="C:\DSD_MERS\DATA\TempData\tempPoint.shp"/>
 			<METADATA/>
 			<SYMBOLOGY>

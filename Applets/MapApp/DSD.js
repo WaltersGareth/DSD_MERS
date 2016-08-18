@@ -25,7 +25,8 @@ function deleteFeatures(){
 function userLoginForm_SaveUser( objPage ) {
 	var userName = objPage.Controls("cboUser").Value;
 	var regionName = objPage.Controls("cboRegion").Value;
-
+	
+	Application.UserProperties("userName") = userName;
 	Application.UserProperties("regionName") = regionName;
 
 	//ADD DATASOURCE CODE TO UPDATE TEMPVALUES TABLE
@@ -68,9 +69,6 @@ function userLoginForm_SaveUser( objPage ) {
 
 	Application.Run ("C:\\DSD_MERS\\ArcPad Apps\\" + regionName + ".lnk");
 	
-	//Map.AddLayerFromFile("C:\\DSD_MERS\\DATA\\AXFs\\" + regionName + "\\SDE_DEFAULT_CSDLP_world.axf|1|MERRegApp_Assessments" );
-	//Map.Layers("MERRegApp_Assessments").editable = false;
-
 	Toolbars("MapTools").item("modepan").click();
 }
 
@@ -157,11 +155,7 @@ function loadLines( objEvent ) {
 }
 
 function selectLines( objEvent ) {
-
-//Console.print (objEvent.Text +", " + objEvent.Value);
-
-Map.Select(Map.Layers("Lines"), objEvent.Value);
-
+	Map.Select(Map.Layers("Lines"), objEvent.Value);
 }
 
 function checkEditingStatus() {
@@ -182,17 +176,28 @@ function checkEditingStatus() {
 }
 
 function copyFeaturesFromAXF(){
-	var dsTemp = Application.CreateAppObject("DataSource");
-	dsTemp.Open("C:\\DSD_MERS\\DATA\\AXFs\\" + Application.UserProperties("regionName") + "\\SDE_DEFAULT_CSDLP_world.axf");
 
 	deleteFeatures();
 
-	var rs = dsTemp.OpenLayer("MERREGAPP_ASSESSMENTS");
-	rs.MoveFirst();
-	while(!rs.EOF){
-		Map.AddFeatureXY(rs.Fields("SHAPE_X").Value, rs.Fields("SHAPE_Y").Value, false);
-		rs.MoveNext();
+	var dsTemp = Application.CreateAppObject("DataSource");
+	dsTemp.Open("C:\\DSD_MERS\\DATA\\AXFs\\" + Application.UserProperties("regionName") + "\\SDE_DEFAULT_CSDLP_world.axf");
+
+	if (dsTemp.IsOpen) {
+		var rs = dsTemp.OpenLayer("MERREGAPP_ASSESSMENTS");
+
+		if (rs.RecordCount > 1) {
+			rs.MoveFirst();
+			while(!rs.EOF){
+				Map.AddFeatureXY (parseFloat(rs.Fields("SHAPE_X").value), parseFloat(rs.Fields("SHAPE_Y").value), false);
+				rs.MoveNext();
+			}
+		}
+		else {
+			//Application.Messagebox ("There are no features to copy");
+		}
+	}
+	else {
+		Application.MessageBox ( "Couldn't open the MERREGAPP Datasource", apOkOnly)
 	}
 
-	Map.Refresh();
 }
