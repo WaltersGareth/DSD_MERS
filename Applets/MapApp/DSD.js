@@ -183,7 +183,7 @@ function copyFeaturesFromAXF(){
 	dsTemp.Open("C:\\DSD_MERS\\DATA\\AXFs\\" + Application.UserProperties("regionName") + "\\SDE_DEFAULT_CSDLP_world.axf");
 
 	if (dsTemp.IsOpen) {
-		var rs = dsTemp.OpenLayer("MERREGAPP_ASSESSMENTS");
+		var rs = dsTemp.OpenLayer("MASTER.MERRegApp_Assessments");
 
 		if (rs.RecordCount > 1) {
 			rs.MoveFirst();
