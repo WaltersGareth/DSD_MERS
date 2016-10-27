@@ -3,14 +3,19 @@ var editType;
 
 var updaters;
 
+var pointCount = 0;
+
 function map_OpenUserLoginForm( eventObj ) {
 	deleteFeatures();
 
 	Applets("DSD").Forms("userLoginForm").show();
 }
 
+
 function deleteFeatures(){
 	var objRecords = Map.Layers("tempPoint").Records;
+
+	pointCount = objRecords.RecordCount;
 
 	if ( objRecords.RecordCount > 0 ) {
 		objRecords.MoveFirst();
@@ -20,6 +25,8 @@ function deleteFeatures(){
 		}
 		while ( !objRecords.EOF );
 	}
+
+	objRecords.Pack();
 }
 
 function userLoginForm_SaveUser( objPage ) {
@@ -102,27 +109,34 @@ function setGeometryForFeature( objEvent ){
 		ty = Map.PointerY;
 	}
 	else {
-		tx = GPS.X;
-		ty = GPS.Y;
-	}
-
-	var dsTemp = Application.CreateAppObject("DataSource");
-	dsTemp.Open("C:\\DSD_MERS\\DATA\\TempValues.axf");
-
-	if ( dsTemp.IsOpen ) {
-		updaters = dsTemp.Execute("SELECT [userName], [newGeometryX], [newGeometryY], [region] FROM [TEMPVALUES];");
-	
-		if (updaters){
-			var insertrs = dsTemp.Execute("UPDATE [TEMPVALUES] SET newGeometryX = " + tx +", newGeometryY = " + ty +";");
+		if ( GPS.isValidFix ){
+			tx = GPS.X;
+			ty = GPS.Y;
+		}
+		else {
+			Application.MessageBox( "There is no GPS fix at the moment" ) 
 		}
 	}
 
-	dsTemp.Close();
-	
-	Map.AddFeatureXY(tx, ty, false);
+	if( tx ) {
+		var dsTemp = Application.CreateAppObject("DataSource");
+		dsTemp.Open("C:\\DSD_MERS\\DATA\\TempValues.axf");
 
-	Application.Timer.Interval = 5000;
-	Application.Timer.Enabled = true;
+		if ( dsTemp.IsOpen ) {
+			updaters = dsTemp.Execute("SELECT [userName], [newGeometryX], [newGeometryY], [region] FROM [TEMPVALUES];");
+		
+			if (updaters){
+				var insertrs = dsTemp.Execute("UPDATE [TEMPVALUES] SET newGeometryX = " + tx +", newGeometryY = " + ty +";");
+			}
+		}
+
+		dsTemp.Close();
+		
+		Map.AddFeatureXY(tx, ty, false);
+
+		Application.Timer.Interval = 5000;
+		Application.Timer.Enabled = true;
+	}
 }
 
 
@@ -177,7 +191,6 @@ function checkEditingStatus() {
 
 function copyFeaturesFromAXF(){
 
-	deleteFeatures();
 
 	var dsTemp = Application.CreateAppObject("DataSource");
 	dsTemp.Open("C:\\DSD_MERS\\DATA\\AXFs\\" + Application.UserProperties("regionName") + "\\SDE_DEFAULT_CSDLP_world.axf");
@@ -185,11 +198,15 @@ function copyFeaturesFromAXF(){
 	if (dsTemp.IsOpen) {
 		var rs = dsTemp.OpenLayer("MASTER.MERRegApp_Assessments");
 
-		if (rs.RecordCount > 1) {
-			rs.MoveFirst();
-			while(!rs.EOF){
-				Map.AddFeatureXY (parseFloat(rs.Fields("SHAPE_X").value), parseFloat(rs.Fields("SHAPE_Y").value), false);
-				rs.MoveNext();
+		if (rs.RecordCount > pointCount) {
+			deleteFeatures();
+
+			if (rs.RecordCount > 1) {
+				rs.MoveFirst();
+				while(!rs.EOF){
+					Map.AddFeatureXY (parseFloat(rs.Fields("SHAPE_X").value), parseFloat(rs.Fields("SHAPE_Y").value), false);
+					rs.MoveNext();
+				}
 			}
 		}
 		else {
