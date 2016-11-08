@@ -153,7 +153,7 @@ function getBookmarkExtent(exArray){
 //search Tools
 
 function loadLines( objEvent ) {
-	var ds = Map.Layers("Lines").DataSource;
+	var ds = Map.Layers("Seismic Lines").DataSource;
 
 	if ( ds.IsOpen ) {
 		var pRS = ds.Execute ("select line from lines where province like '%" + Application.UserProperties("regionName") + "%';");
@@ -169,7 +169,7 @@ function loadLines( objEvent ) {
 }
 
 function selectLines( objEvent ) {
-	Map.Select(Map.Layers("Lines"), objEvent.Value);
+	Map.Select(Map.Layers("Seismic Lines"), objEvent.Value);
 }
 
 function checkEditingStatus() {

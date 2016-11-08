@@ -1,8 +1,8 @@
 <ArcPad>
-	<MAP name="Lines_WGS">
+	<MAP name="SIS_MERRegApp_SeismicLines_P">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="128.319070084359" miny="-30.2857330601743" maxx="133.115966988231" maxy="-28.1002017031882"/>
+			<ENVELOPE minx="138.415611821882" miny="-28.7329888640094" maxx="142.121379120301" maxy="-26.9404748575058"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 			<PROPERTY name="userName" value="Dragan"/>
@@ -74,12 +74,12 @@
 			</FIELDHISTORY>
 			<SNAPPING vertex="false"/>
 		</LAYER>
-		<LAYER name="Lines" identify="true" quickcapture="true" quickcapturelabel="Capture Lines" quickdraw="1">
-			<DATASET name="C:\DSD_MERS\DATA\AXFs\Lines_WGS\Lines_WGS.axf|1|Lines"/>
+		<LAYER name="Seismic Lines" identify="true" quickcapture="true" quickcapturelabel="Capture Seismic Lines" quickdraw="1">
+			<DATASET name="C:\DSD_MERS\DATA\AXFs\SIS_MERRegApp_SeismicLines_P\SIS_MERRegApp_SeismicLines_P.axf|2|Seismic Lines"/>
 			<METADATA/>
 			<SYMBOLOGY>
-				<SIMPLELABELRENDERER field="NAME" rotationfield="" visible="true" expression="" language="">
-					<TEXTSYMBOL fontcolor="Black" font="Arial" fontstyle="regular" fontsize="8" horzalignment="center" vertalignment="center"/>
+				<SIMPLELABELRENDERER field="NAME" rotationfield="" visible="false" expression="" language="">
+					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="8"/>
 				</SIMPLELABELRENDERER>
 			</SYMBOLOGY>
 			<SNAPPING vertex="false" edge="false" end="false"/>
@@ -91,7 +91,6 @@
 		<MAPGRID quickdraw="0"/>
 		<TRACKLOG quickdraw="0"/>
 		<TOOLBARS>
-			<TOOLBAR name="Main" visible="true"/>
 			<TOOLBAR name="MapTools" visible="true"/>
 		</TOOLBARS>
 		<REFPOINTS/>

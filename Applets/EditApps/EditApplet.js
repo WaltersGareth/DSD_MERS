@@ -35,6 +35,8 @@ function getTimer(){
 				tempX = updaters.Fields(2).Value;
 				tempY = updaters.Fields(3).Value;
 				tempUserName =  updaters.Fields(1).Value;
+				
+				Application.UserProperties("region") = updaters.Fields(4).Value;
 
 				Map.CenterAtXY ( updaters.Fields(2).Value, updaters.Fields(3).Value);
 				Map.EditLayer.Forms("FORM2").Show();
@@ -57,15 +59,15 @@ function getTimer(){
 
 function getSurveyDetails() {
 
-	var result = Map.Layers("Lines").Records.findNearestXY(tempX, tempY);
+	var result = Map.Layers("Seismic Lines").Records.findNearestXY(tempX, tempY);
 
 	if ( result ){
 		//Console.print("testing...");
-		Map.Layers("Lines").Records.Bookmark = result;
-		Application.UserProperties("LINE") = Map.Layers("Lines").Records.Fields("LINE").value;
-		Application.UserProperties("SURVEY") = Map.Layers("Lines").Records.Fields("SURVEY").value;
-		Application.UserProperties("NAME") = Map.Layers("Lines").Records.Fields("NAME").value;
-		Application.UserProperties("OPERATOR") = Map.Layers("Lines").Records.Fields("OPERATOR").value;
+		Map.Layers("Seismic Lines").Records.Bookmark = result;
+		Application.UserProperties("LINE") = Map.Layers("Seismic Lines").Records.Fields("LINE").value;
+		Application.UserProperties("SURVEY") = Map.Layers("Seismic Lines").Records.Fields("SURVEY").value;
+		Application.UserProperties("NAME") = Map.Layers("Seismic Lines").Records.Fields("NAME").value;
+		Application.UserProperties("OPERATOR") = Map.Layers("Seismic Lines").Records.Fields("OPERATOR").value;
 	}
 	else {
 		Application.MessageBox ("There are no surveys in the results.", apOkOnly)
@@ -267,13 +269,14 @@ function page_SetActive( objPage ){
 		}
 	}
 
-	var ds = Map.Layers("Lines").DataSource;
+	var ds = Map.Layers("Seismic Lines").DataSource;
 	if ( ds.IsOpen ) {
-		var sqlStr = "SELECT [LINE] FROM [LINES] WHERE [SURVEY] = '" + Application.UserProperties("SURVEY") + "';" ;
+		var sqlStr = "SELECT [LINE] FROM [MERREGAPPSEISMICLINES] WHERE [SURVEY] = '" + Application.UserProperties("SURVEY") + "';" ;
+   		Console.print (sqlStr)
 		var pRS = ds.Execute( sqlStr );
 
 		if ( pRS !== null) {
-
+				
             while (!pRS.EOF) {
                 objPage.Controls("cboLines").AddItem(pRS.Fields(1).Value, pRS.Fields(1).Value);
 
@@ -285,6 +288,8 @@ function page_SetActive( objPage ){
 
 		}
 		ds.close();
+
+
 
 		objPage.Controls("cboLines").ListIndex = bk;
 	}	
@@ -319,6 +324,7 @@ function clearForm(objEvent){
 			break;
 		}
 	}
+
 }
 
 function onFeatureAdded( objEvent ){
@@ -339,7 +345,7 @@ function onFeatureAdded( objEvent ){
 
 	//The jScript version of FindFiles isn't working. This will execute the script as a single VBscript.
 	Applets("PhotosApplet").Execute("Call MoveImages()");
-	Applets("PhotosApplet").Execute("Call MoveVoiceRecordings()");
+	//Applets("PhotosApplet").Execute("Call MoveVoiceRecordings()");
 
 	Application.ExecuteCommand("clearSelected");
 	Map.Refresh();
@@ -355,6 +361,8 @@ function onFeatureAdded( objEvent ){
 	if (!addResult){
 		Application.MessageBox (ThisEvent.Name  + " - You can't open/add another point while you have the form open");
 	}
+
+	//objPage.Controls("cboLines").Clear()
 
 	Application.Timer.Enabled = true;
 
@@ -670,6 +678,8 @@ function addFeatureFromForm( objEvent ){
 
 		Console.print ( "result " + result );
 	}
+
+	Applets("PhotosApplet").Execute("Call MoveImages()");
 
 	ds.Close();	
 

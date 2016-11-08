@@ -11,7 +11,7 @@
 			<SIMPLELINESYMBOL width="1"/>
 			<TEXTSYMBOL fontcolor="Black" font="Tahoma" fontstyle="regular" fontsize="9"/>
 		</MAPGRID>
-		<GPS protocol="NMEA" datum="D_WGS_1984" initialize="" logfile="C:\UserData\Documents\GPS.log" northreference="true" priority="highest" delay="1000" handle="1116" autoactivate="true">
+		<GPS protocol="NMEA" datum="D_WGS_1984" initialize="" logfile="C:\UserData\Documents\GPS.log" northreference="true" priority="highest" delay="1000" handle="1048" autoactivate="true" autopanmargin="0">
 			<COMPORT port="3" baud="4800" dtrcontrol="enable" rtscontrol="enable"/>
 			<HEIGHT units="9001" geoidseparation="0" antennaheight="0"/>
 			<QUALITYCONTROL level="0">
@@ -45,7 +45,7 @@
 		<TRACKLOG name="C:\Users\GWalters\Documents\My ArcPad\TrackLog.shp" interval="5"/>
 		<LOCALE lcid="00000409" codepage="1252"/>
 		<DISPLAY dialogbuttonsize="2">
-			<MAPNAVIGATOR visible="false"/>
+			<MAPNAVIGATOR/>
 			<SYSTEMTRAY/>
 			<TABBAR applicationbutton="false" dock="top"/>
 		</DISPLAY>
