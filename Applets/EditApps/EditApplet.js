@@ -324,11 +324,9 @@ function clearForm(objEvent){
 			break;
 		}
 	}
-
 }
 
 function onFeatureAdded( objEvent ){
-
 
 	Map.Layers(mapLayerName).Records.Bookmark = Map.SelectionBookmark;
 	var ds = 	Map.Layers(mapLayerName).DataSource;
@@ -365,7 +363,6 @@ function onFeatureAdded( objEvent ){
 	//objPage.Controls("cboLines").Clear()
 
 	Application.Timer.Enabled = true;
-
 }
 
 var undoArr = [];
@@ -425,12 +422,12 @@ function addFeatureFromForm( objEvent ){
 	var objPage = objEvent.object.Parent;
 	var objControls = objPage.Controls;
 
+
 	if ( GPS.IsValidFix ) {
 		tempX = GPS.X;
 		tempY = GPS.Y;
 	}
 
-//	var sqlFields = "[LINE], [ASSESSOR], [ASSESSORDATE], [EASTING], [NORTHING], [X_LINE], [X_LINE_LOOKDIR], [INFRASTRUCTURE], [VISUAL], [UPHOLE], [LITTER], [DUNES_VEG], [DUNES_LAND], [FLOODPLAIN_VEG], [FLOODPLAIN_LAND], [GIBBER_VEG], [GIBBER_LAND], [SALTLAKE_LAND], [GLOBALID], [WETLANDS_LAND], [MOONPLAINS_LAND], [BREAKAWAYS_LAND], [BREAKAWAYS_VEG], [STONYPLAINS_LAND], [STONYPLAINS_VEG], [SWALESSANDPLAINS_LAND], [SWALESSANDPLAINS_VEG], [LIMESTONEPLAINS_LAND], [LIMESTONEPLAINS_VEG], [GYPCRETE_LAND], [GYPCRETE_VEG], [NATIVEVEG_COMMUNITIES],[NATIVEVEG_SPECIES], [NONNATIVEVEG_AGIIMPACT], [CAMPSITE], [LANDSURFACE], [NOTES], [CREATED_USER], [CREATED_DATE], [LAST_EDITED_USER], [LAST_EDITED_DATE], [GPSFIX], [X], [Y], [SURVEY], [PHOTOLINK], [SHAPE_X], [SHAPE_Y], [AXF_TIMESTAMP], [AXF_STATUS]";
 	var randomNumber = Math.random();
 	randomNumber = parseInt(randomNumber * 10000) * -1;
 
@@ -675,8 +672,6 @@ function addFeatureFromForm( objEvent ){
 
 	if ( ds.IsOpen ) {
 		var result = ds.Execute( sqlString );
-
-		Console.print ( "result " + result );
 	}
 
 	Applets("PhotosApplet").Execute("Call MoveImages()");

@@ -11,7 +11,7 @@ Set pFile = Application.CreateAppObject("File")
 Dim origLocation, httpLocation
 origLocation = "C:\DSD_MERS\DATA\AXFs\" & Application.UserProperties("region") & "\"
 newLocation = "C:\DSD_MERS\Attachments\" & Application.UserProperties("region") & "\"
-httpLocation = "http://dsd-mer-reg-app.s3.amazonaws.com/"
+httpLocation = "http://dsd-mer-reg-app.s3.amazonaws.com/" & Application.UserProperties("region") & "/"
 Console.print origLocation
 
 Console.print newLocation
