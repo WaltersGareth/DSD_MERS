@@ -10,7 +10,7 @@ var mapLayerName = "MERRegApp_Assessments";
 var mapLayer = Map.Layers(mapLayerName);
 
 function initiateTimer(){
-	Application.Timer.interval = 500;
+	Application.Timer.interval = 5000;
 	Application.Timer.enabled = true;
 }
 
@@ -30,7 +30,7 @@ function getTimer(){
 			}
 
 			if (tempX !== updaters.Fields(2).Value && tempY !== updaters.Fields(3).Value ){
-				Console.print ("should be unique...");
+				Console.print ("should be unique... " + updaters.Fields(1).Value + " , " + updaters.Fields(2).Value + " , " + updaters.Fields(3).Value + " , " + updaters.Fields(4).Value);
 				Application.Timer.Enabled = false;
 				tempX = updaters.Fields(2).Value;
 				tempY = updaters.Fields(3).Value;
@@ -40,12 +40,6 @@ function getTimer(){
 
 				Map.CenterAtXY ( updaters.Fields(2).Value, updaters.Fields(3).Value);
 				Map.EditLayer.Forms("FORM2").Show();
-				//var addResult = Map.AddFeatureXY(updaters.Fields(2).Value, updaters.Fields(3).Value, true);
-				/*
-				if (!addResult){
-					Application.MessageBox (ThisEvent.Name  + " - You can't open/add another point while you have the form open");
-				}
-				*/
 			}
 		
 		}
@@ -62,7 +56,7 @@ function getSurveyDetails() {
 	var result = Map.Layers("Seismic Lines").Records.findNearestXY(tempX, tempY);
 
 	if ( result ){
-		//Console.print("testing...");
+		Console.print("testing...");
 		Map.Layers("Seismic Lines").Records.Bookmark = result;
 		Application.UserProperties("LINE") = Map.Layers("Seismic Lines").Records.Fields("LINE").value;
 		Application.UserProperties("SURVEY") = Map.Layers("Seismic Lines").Records.Fields("SURVEY").value;
@@ -220,6 +214,9 @@ function resetPage( objPage ){
 	objPage.Controls("lblAssessor").text = tempUserName;
 	objPage.Controls("lblCompanyText").text ="COMPANY: " + Application.UserProperties("OPERATOR");
 	objPage.Controls("lblName").text ="NAME: " + Application.UserProperties("NAME");
+
+	objPage.Controls("txtNotes").text = "";
+	objPage.Controls("Image6").Value = "Camera.jpg";
 }
 
 function page_SetActive( objPage ){
@@ -271,7 +268,7 @@ function page_SetActive( objPage ){
 
 	var ds = Map.Layers("Seismic Lines").DataSource;
 	if ( ds.IsOpen ) {
-		var sqlStr = "SELECT [LINE] FROM [MERREGAPPSEISMICLINES] WHERE [SURVEY] = '" + Application.UserProperties("SURVEY") + "';" ;
+		var sqlStr = "SELECT [LINE] FROM [Seismic Lines] WHERE [SURVEY] = '" + Application.UserProperties("SURVEY") + "';" ;
    		Console.print (sqlStr)
 		var pRS = ds.Execute( sqlStr );
 
@@ -288,8 +285,6 @@ function page_SetActive( objPage ){
 
 		}
 		ds.close();
-
-
 
 		objPage.Controls("cboLines").ListIndex = bk;
 	}	
@@ -324,6 +319,8 @@ function clearForm(objEvent){
 			break;
 		}
 	}
+
+	objPage.Controls("Image6").Value = "Camera.jpg";
 }
 
 function onFeatureAdded( objEvent ){
@@ -332,6 +329,7 @@ function onFeatureAdded( objEvent ){
 	var ds = 	Map.Layers(mapLayerName).DataSource;
 
 	if ( ds.IsOpen ) {
+		Application.MessageBox("the datasource is open.");
 		if ( GPS.IsValidFix ) {
 			ds.execute("UPDATE [" + mapLayerName + "] SET SHAPE_X = " + GPS.X + ", SHAPE_Y = " + GPS.Y + " WHERE AXF_OBJECTID = " + Map.SelectionBookmark + ";");
 		}
@@ -422,12 +420,37 @@ function addFeatureFromForm( objEvent ){
 	var objPage = objEvent.object.Parent;
 	var objControls = objPage.Controls;
 
+	Application.messageBox("before: " + tempX + ", " + tempY);
 
-	if ( GPS.IsValidFix ) {
-		tempX = GPS.X;
-		tempY = GPS.Y;
+
+	var dsTemp = Application.CreateAppObject("DataSource");
+	dsTemp.Open("C:\\DSD_MERS\\DATA\\TempValues.axf");
+
+	if ( dsTemp.IsOpen ) {
+		var updaters = dsTemp.Execute("SELECT [userName], [newGeometryX], [newGeometryY], [region] FROM [TEMPVALUES];");
+	
+		if (updaters){
+			updaters.MoveFirst();
+
+			if ( !updaters.Fields(2).Value ){
+				return;
+			}
+
+			tempX = updaters.Fields(2).Value;
+			tempY = updaters.Fields(3).Value;
+
+			Application.messageBox("after: " + tempX + ", " + tempY);
+
+		}
 	}
 
+/*	if ( GPS.IsValidFix ) {
+		tempX = GPS.X;
+		tempY = GPS.Y;
+		Application.MessageBox("Should be using the GPS "+ tempX + ", " + tempY);
+	}
+	else Application.MessageBox ("Reverting to last known position " + tempX + ", " + tempY);
+*/
 	var randomNumber = Math.random();
 	randomNumber = parseInt(randomNumber * 10000) * -1;
 
@@ -672,9 +695,18 @@ function addFeatureFromForm( objEvent ){
 
 	if ( ds.IsOpen ) {
 		var result = ds.Execute( sqlString );
+		if ( result ==  1 ){
+			onFeatureAdded();
+		}
+
 	}
 
 	Applets("PhotosApplet").Execute("Call MoveImages()");
+
+	objControls("txtNotes").Text = "";
+	objControls("Image6").Value = "C:\\DSD_MERS\\Applets\\EditApps\\camera.jpg";
+
+	
 
 	ds.Close();	
 

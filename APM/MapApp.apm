@@ -2,13 +2,15 @@
 	<MAP name="SIS_MERRegApp_SeismicLines_P">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="138.415611821882" miny="-28.7329888640094" maxx="142.121379120301" maxy="-26.9404748575058"/>
+			<ENVELOPE minx="138.31279647403" miny="-28.761149264524" maxx="142.240414284696" maxy="-26.9285342735347"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 			<PROPERTY name="userName" value="Dragan"/>
 		</PROPERTIES>
-		<BOOKMARKS/>
-		<LAYER name="tempPoint.shp" identify="true" edit="true" quickcapture="true" quickcapturelabel="Capture tempPoint.shp" showeditform="false" quickdraw="1">
+		<BOOKMARKS>
+			<BOOKMARK name="Bookmark 2" minx="139.296710778491" miny="-27.4803667397696" maxx="139.915136422083" maxy="-27.1918111419769"/>
+		</BOOKMARKS>
+		<LAYER name="tempPoint.shp" identify="true" quickcapture="true" quickcapturelabel="Capture tempPoint.shp" showeditform="false" quickdraw="1">
 			<DATASET name="C:\DSD_MERS\DATA\TempData\tempPoint.shp"/>
 			<METADATA/>
 			<SYMBOLOGY>
@@ -18,58 +20,58 @@
 			</SYMBOLOGY>
 			<FIELDHISTORY>
 				<FIELDS>
-					<FIELD name="SHAPE_Y"/>
-					<FIELD name="NATIVEVE_2"/>
-					<FIELD name="FLOODPLA_2"/>
-					<FIELD name="VISUAL"/>
 					<FIELD name="ASSESSOR" value=""/>
-					<FIELD name="PHOTOLINK" value=""/>
-					<FIELD name="NONNATIV_1"/>
-					<FIELD name="LIMESTON_1"/>
-					<FIELD name="SWALESSA_1"/>
-					<FIELD name="GLOBALID" value=""/>
+					<FIELD name="VISUAL"/>
+					<FIELD name="FLOODPLA_2"/>
+					<FIELD name="NATIVEVE_2"/>
+					<FIELD name="SHAPE_Y"/>
 					<FIELD name="SALTLAKE_1"/>
-					<FIELD name="AXF_STATUS"/>
-					<FIELD name="LIMESTON_2"/>
+					<FIELD name="GLOBALID" value=""/>
+					<FIELD name="SWALESSA_1"/>
+					<FIELD name="LIMESTON_1"/>
+					<FIELD name="NONNATIV_1"/>
+					<FIELD name="PHOTOLINK" value=""/>
 					<FIELD name="SWALESSA_2"/>
-					<FIELD name="X"/>
-					<FIELD name="DUNES_VEG"/>
-					<FIELD name="INFRASTR_1"/>
+					<FIELD name="LIMESTON_2"/>
+					<FIELD name="AXF_STATUS"/>
 					<FIELD name="ASSESSOR_1"/>
-					<FIELD name="AXF_TIME_1"/>
-					<FIELD name="Y"/>
-					<FIELD name="LAST_EDI_1" value=""/>
+					<FIELD name="INFRASTR_1"/>
+					<FIELD name="DUNES_VEG"/>
+					<FIELD name="X"/>
 					<FIELD name="GIBBER_L_1"/>
-					<FIELD name="LAST_EDI_2"/>
-					<FIELD name="CREATED__1" value=""/>
-					<FIELD name="CAMPSITE"/>
-					<FIELD name="X_LINE_L_1" value=""/>
+					<FIELD name="LAST_EDI_1" value=""/>
+					<FIELD name="Y"/>
+					<FIELD name="AXF_TIME_1"/>
 					<FIELD name="LINE" value=""/>
-					<FIELD name="CREATED__2"/>
-					<FIELD name="OBJECTID"/>
+					<FIELD name="X_LINE_L_1" value=""/>
+					<FIELD name="CAMPSITE"/>
+					<FIELD name="CREATED__1" value=""/>
+					<FIELD name="LAST_EDI_2"/>
 					<FIELD name="AXF_OBJE_1"/>
+					<FIELD name="OBJECTID"/>
+					<FIELD name="CREATED__2"/>
 					<FIELD name="BREAKAWA_1"/>
-					<FIELD name="LANDSURF_1"/>
-					<FIELD name="BREAKAWA_2"/>
 					<FIELD name="MOONPLAI_1"/>
+					<FIELD name="BREAKAWA_2"/>
+					<FIELD name="LANDSURF_1"/>
 					<FIELD name="SURVEY" value=""/>
-					<FIELD name="WETLANDS_1"/>
 					<FIELD name="LITTER"/>
-					<FIELD name="GPSFIX"/>
+					<FIELD name="WETLANDS_1"/>
 					<FIELD name="GIBBER_VEG"/>
-					<FIELD name="NOTES" value=""/>
-					<FIELD name="GYPCRETE_1"/>
-					<FIELD name="UPHOLE"/>
+					<FIELD name="GPSFIX"/>
 					<FIELD name="X_LINE" value=""/>
+					<FIELD name="UPHOLE"/>
+					<FIELD name="GYPCRETE_1"/>
+					<FIELD name="NOTES" value=""/>
 					<FIELD name="GYPCRETE_2"/>
-					<FIELD name="STONYPLA_1"/>
-					<FIELD name="DUNES_LAND"/>
 					<FIELD name="EASTING"/>
-					<FIELD name="STONYPLA_2"/>
+					<FIELD name="DUNES_LAND"/>
+					<FIELD name="STONYPLA_1"/>
 					<FIELD name="NORTHING"/>
-					<FIELD name="SHAPE_X"/>
-					<FIELD name="NATIVEVE_1"/>
+					<FIELD name="STONYPLA_2"/>
 					<FIELD name="FLOODPLA_1"/>
+					<FIELD name="NATIVEVE_1"/>
+					<FIELD name="SHAPE_X"/>
 				</FIELDS>
 			</FIELDHISTORY>
 			<SNAPPING vertex="false"/>
@@ -91,7 +93,10 @@
 		<MAPGRID quickdraw="0"/>
 		<TRACKLOG quickdraw="0"/>
 		<TOOLBARS>
-			<TOOLBAR name="MapTools" visible="true"/>
+			<TOOLBAR name="Main" visible="true"/>
+			<TOOLBAR name="Browse" visible="true"/>
+			<TOOLBAR name="Draw" visible="true"/>
+			<TOOLBAR name="QuickCapture" visible="true"/>
 		</TOOLBARS>
 		<REFPOINTS/>
 	</MAP>

@@ -29,7 +29,10 @@
 		</FORMS>
 		<SYSTEMOBJECTS>
 			<MAP onopen="map_OpenUserLoginForm(ThisEvent.Object);" onfeatureadded="//setGeometryForFeature( ThisEvent );"/>
-			<APPLICATION ontimer="copyFeaturesFromAXF();"/>
+			<APPLICATION ontimer="copyFeaturesFromAXF();
+if(GPS.isValidFix){
+  addCoordsToTempValues(GPS.X, GPS.Y);
+}"/>
 			<GPS onopen="GPS.AutoPanMargin = 1;"/>
 		</SYSTEMOBJECTS>
 		<TOOLBARS>
@@ -40,6 +43,7 @@
 				<TOOLBUTTON command="modeidentify"/>
 				<TOOLBUTTON name="tlBookmarkExtent" shortcut="" image="$maproll" onclick="getBookmarkExtent(Application.userProperties(&quot;bookmarkExtent&quot;));"/>
 				<TOOLBUTTON command="centerongps"/>
+				<TOOLBUTTON onclick="Map.Scale = 50000;" name="tl50k" shortcut="" image="@setmapscale"/>
 			</TOOLBAR>
 		</TOOLBARS>
 		<MAPNAVIGATOR>

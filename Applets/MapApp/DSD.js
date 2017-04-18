@@ -61,15 +61,23 @@ function userLoginForm_SaveUser( objPage ) {
 
 	var rect = Application.CreateAppObject("Rectangle");
 
-	for ( var b = 0; b < bs.length; b++ ) {
-		 if (bs.item(b).getAttribute("name") == regionName) {
-			rect.left = bs.item(b).getAttribute("minx");
-	  		rect.bottom = bs.item(b).getAttribute("miny");
-	  		rect.right = bs.item(b).getAttribute("maxx");
-	  		rect.top = bs.item(b).getAttribute("maxy");
-			Map.extent = rect;
-			Application.userProperties("bookmarkExtent") = [rect.left, rect.bottom, rect.right, rect.top]
-	 	}
+	if (bs.length == 0){
+		Application.MessageBox("There is no bookmark");
+	}
+	else
+	{
+
+		for ( var b = 0; b < bs.length; b++ ) {
+			 if (bs.item(b).getAttribute("name") == regionName) {
+				rect.left = bs.item(b).getAttribute("minx");
+				rect.bottom = bs.item(b).getAttribute("miny");
+				rect.right = bs.item(b).getAttribute("maxx");
+				rect.top = bs.item(b).getAttribute("maxy");
+				Map.extent = rect;
+				Application.userProperties("bookmarkExtent") = [rect.left, rect.bottom, rect.right, rect.top]
+				Application.MessageBox ( Application.userProperties("bookmarkExtent") );
+			}
+		}
 	}
 
 	mapOpened = true;
@@ -119,6 +127,20 @@ function setGeometryForFeature( objEvent ){
 	}
 
 	if( tx ) {
+		addCoordsToTempValues(tx, ty);
+		
+		Map.AddFeatureXY(tx, ty, false);
+
+		Application.Timer.Interval = 5000;
+		Application.Timer.Enabled = true;
+
+		Map.Scale = 50000;
+	}
+}
+
+function addCoordsToTempValues(xValue, yValue){
+
+
 		var dsTemp = Application.CreateAppObject("DataSource");
 		dsTemp.Open("C:\\DSD_MERS\\DATA\\TempValues.axf");
 
@@ -126,17 +148,12 @@ function setGeometryForFeature( objEvent ){
 			updaters = dsTemp.Execute("SELECT [userName], [newGeometryX], [newGeometryY], [region] FROM [TEMPVALUES];");
 		
 			if (updaters){
-				var insertrs = dsTemp.Execute("UPDATE [TEMPVALUES] SET newGeometryX = " + tx +", newGeometryY = " + ty +";");
+				var insertrs = dsTemp.Execute("UPDATE [TEMPVALUES] SET newGeometryX = " + xValue +", newGeometryY = " + yValue +";");
 			}
 		}
 
 		dsTemp.Close();
-		
-		Map.AddFeatureXY(tx, ty, false);
 
-		Application.Timer.Interval = 5000;
-		Application.Timer.Enabled = true;
-	}
 }
 
 
@@ -191,7 +208,6 @@ function checkEditingStatus() {
 
 function copyFeaturesFromAXF(){
 
-
 	var dsTemp = Application.CreateAppObject("DataSource");
 	dsTemp.Open("C:\\DSD_MERS\\DATA\\AXFs\\" + Application.UserProperties("regionName") + "\\SDE_DEFAULT_CSDLP_world.axf");
 
@@ -217,4 +233,6 @@ function copyFeaturesFromAXF(){
 		Application.MessageBox ( "Couldn't open the MERREGAPP Datasource", apOkOnly)
 	}
 
+
+	dsTemp.Close();
 }
