@@ -134,7 +134,7 @@ function setGeometryForFeature( objEvent ){
 		Application.Timer.Interval = 5000;
 		Application.Timer.Enabled = true;
 
-		Map.Scale = 50000;
+		//Map.Scale = 5000;
 	}
 }
 

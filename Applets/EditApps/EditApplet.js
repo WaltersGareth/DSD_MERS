@@ -348,10 +348,10 @@ function onFeatureAdded( objEvent ){
 
 	var addResult;
 	if ( GPS.IsValidFix ) {
-		addResult = Map.AddFeatureXY(GPS.X, GPS.Y);
+		addResult = Map.AddFeatureXY(GPS.X, GPS.Y, false);
 	}
 	else {
- 		addResult = Map.AddFeatureXY( Application.UserProperties("gpsX"), Application.UserProperties("gpsY") );
+ 		addResult = Map.AddFeatureXY( Application.UserProperties("gpsX"), Application.UserProperties("gpsY"), false);
 	}
 
 	if (!addResult){
@@ -420,8 +420,6 @@ function addFeatureFromForm( objEvent ){
 	var objPage = objEvent.object.Parent;
 	var objControls = objPage.Controls;
 
-	Application.messageBox("before: " + tempX + ", " + tempY);
-
 
 	var dsTemp = Application.CreateAppObject("DataSource");
 	dsTemp.Open("C:\\DSD_MERS\\DATA\\TempValues.axf");
@@ -439,18 +437,9 @@ function addFeatureFromForm( objEvent ){
 			tempX = updaters.Fields(2).Value;
 			tempY = updaters.Fields(3).Value;
 
-			Application.messageBox("after: " + tempX + ", " + tempY);
-
 		}
 	}
 
-/*	if ( GPS.IsValidFix ) {
-		tempX = GPS.X;
-		tempY = GPS.Y;
-		Application.MessageBox("Should be using the GPS "+ tempX + ", " + tempY);
-	}
-	else Application.MessageBox ("Reverting to last known position " + tempX + ", " + tempY);
-*/
 	var randomNumber = Math.random();
 	randomNumber = parseInt(randomNumber * 10000) * -1;
 
