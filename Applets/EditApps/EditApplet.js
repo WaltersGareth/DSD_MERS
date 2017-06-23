@@ -30,7 +30,7 @@ function getTimer(){
 			}
 
 			if (tempX !== updaters.Fields(2).Value && tempY !== updaters.Fields(3).Value ){
-				Console.print ("should be unique... " + updaters.Fields(1).Value + " , " + updaters.Fields(2).Value + " , " + updaters.Fields(3).Value + " , " + updaters.Fields(4).Value);
+				//Console.print ("should be unique... " + updaters.Fields(1).Value + " , " + updaters.Fields(2).Value + " , " + updaters.Fields(3).Value + " , " + updaters.Fields(4).Value);
 				Application.Timer.Enabled = false;
 				tempX = updaters.Fields(2).Value;
 				tempY = updaters.Fields(3).Value;
@@ -56,7 +56,7 @@ function getSurveyDetails() {
 	var result = Map.Layers("Seismic Lines").Records.findNearestXY(tempX, tempY);
 
 	if ( result ){
-		Console.print("testing...");
+		//Console.print("testing...");
 		Map.Layers("Seismic Lines").Records.Bookmark = result;
 		Application.UserProperties("LINE") = Map.Layers("Seismic Lines").Records.Fields("LINE").value;
 		Application.UserProperties("SURVEY") = Map.Layers("Seismic Lines").Records.Fields("SURVEY").value;
@@ -269,7 +269,7 @@ function page_SetActive( objPage ){
 	var ds = Map.Layers("Seismic Lines").DataSource;
 	if ( ds.IsOpen ) {
 		var sqlStr = "SELECT [LINE] FROM [Seismic Lines] WHERE [SURVEY] = '" + Application.UserProperties("SURVEY") + "';" ;
-   		Console.print (sqlStr)
+   		//Console.print (sqlStr)
 		var pRS = ds.Execute( sqlStr );
 
 		if ( pRS !== null) {
@@ -329,7 +329,6 @@ function onFeatureAdded( objEvent ){
 	var ds = 	Map.Layers(mapLayerName).DataSource;
 
 	if ( ds.IsOpen ) {
-		Application.MessageBox("the datasource is open.");
 		if ( GPS.IsValidFix ) {
 			ds.execute("UPDATE [" + mapLayerName + "] SET SHAPE_X = " + GPS.X + ", SHAPE_Y = " + GPS.Y + " WHERE AXF_OBJECTID = " + Map.SelectionBookmark + ";");
 		}
@@ -374,7 +373,7 @@ function undoValues(objEvent) {
 	if ( objEvent.Parent.Controls( undoArr[undoArr.length-1][0] ).Text == undoArr[undoArr.length-1][1] ){
 		undoArr.pop()
 	}
-	Console.print ("undoing..." + undoArr[undoArr.length-1][0] + ", " + undoArr[undoArr.length-1][1] ); 
+	//Console.print ("undoing..." + undoArr[undoArr.length-1][0] + ", " + undoArr[undoArr.length-1][1] ); 
 	objEvent.Parent.Controls( undoArr[undoArr.length-1][0] ).Text = undoArr[undoArr.length-1][1];
 	fromUndo = true;
 	undoArr.pop();
