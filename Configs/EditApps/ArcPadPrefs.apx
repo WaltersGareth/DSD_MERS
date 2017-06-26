@@ -1,7 +1,7 @@
 ﻿<ArcPad>
 	<PREFERENCES>
 		<STARTUP quickstart="0"/>
-		<SCRIPTING language="VBScript"/>
+		<SCRIPTING language="JScript"/>
 		<PATHS public="C:\Users\Public\Documents\ArcPad" data="C:\DSD_MERS\DATA" applets="C:\DSD_MERS\Applets\Common,C:\DSD_MERS\Applets\EditApps" styles="" extensions="" templates=""/>
 		<CONFIG file="C:\DSD_MERS\Configs\EditApps\ArcPad.apx"/>
 		<FONTS>

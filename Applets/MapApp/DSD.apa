@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ArcPad>
 	<APPLET name="DSD">
 		<FORMS>
@@ -18,7 +18,6 @@
 						<LISTITEM value="Officer" text="Officer"/>
 						<LISTITEM value="Otway" text="Otway"/>
 						<LISTITEM value="Leigh Creek" text="Leigh Creek"/>
-						<LISTITEM value="CooperTest" text="CooperTest"/>
 					</COMBOBOX>
 				</PAGE>
 			</FORM>
