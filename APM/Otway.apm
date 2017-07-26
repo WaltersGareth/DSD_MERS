@@ -2,27 +2,47 @@
 	<MAP name="">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="136.557160278881" miny="-37.8906405916391" maxx="141.952256582889" maxy="-35.5029935328157"/>
+			<ENVELOPE minx="136.12826746817" miny="-36.0924005604597" maxx="141.099358913598" maxy="-33.7729038213091"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 		</PROPERTIES>
 		<BOOKMARKS/>
-		<LAYER name="MERRegApp_Assessments" identify="true" edit="true" quickcapture="true" quickcapturelabel="Capture MERRegApp_Assessments" quickdraw="1">
-			<DATASET name="C:\DSD_MERS\DATA\AXFs\Otway\SDE_DEFAULT_CSDLP_world.axf|1|MERRegApp_Assessments"/>
+		<LAYER name="MASTER.MERRegApp_Assessments" identify="true" edit="true" quickcapture="false" quickcapturelabel="Capture MASTER.MERRegApp_Assessments" quickdraw="1">
+			<DATASET name="C:\DSD_MERS\DATA\AXFs\Otway\SDE_DEFAULT_CSDLP_world.axf|1|MASTER.MERRegApp_Assessments"/>
 			<METADATA/>
 			<SYMBOLOGY>
-				<SIMPLELABELRENDERER field="LINE" rotationfield="" visible="false" expression="" language="">
+				<SIMPLELABELRENDERER field="" rotationfield="" visible="false" expression="" language="">
 					<TEXTSYMBOL fontcolor="Black" font="Arial" fontstyle="regular" fontsize="8" vertalignment="bottom"/>
 				</SIMPLELABELRENDERER>
 			</SYMBOLOGY>
 			<SNAPPING vertex="false"/>
 		</LAYER>
-		<LAYER name="Lines" visible="false" identify="true" quickcapture="true" quickcapturelabel="Capture Lines" quickdraw="1">
-			<DATASET name="C:\DSD_MERS\DATA\AXFs\Lines_WGS\Lines_WGS.axf|1|Lines"/>
+		<LAYER name="MASTER.MERRegApp_MinTracklogPoint" identify="true" quickcapture="false" quickcapturelabel="Capture MASTER.MERRegApp_MinTracklogPoint" quickdraw="1">
+			<DATASET name="C:\DSD_MERS\DATA\AXFs\Otway\SDE_DEFAULT_CSDLP_world.axf|2|MASTER.MERRegApp_MinTracklogPoint"/>
+			<METADATA/>
+			<SYMBOLOGY>
+				<SIMPLELABELRENDERER field="UTCTIME" rotationfield="" visible="false" expression="" language="">
+					<TEXTSYMBOL fontcolor="Black" font="Arial" fontstyle="regular" fontsize="8" vertalignment="bottom"/>
+				</SIMPLELABELRENDERER>
+			</SYMBOLOGY>
+			<SNAPPING vertex="false"/>
+		</LAYER>
+		<LAYER name="Seismic Lines" identify="true" quickcapture="true" quickcapturelabel="Capture Seismic Lines" quickdraw="1">
+			<DATASET name="C:\DSD_MERS\DATA\AXFs\SIS_MERRegApp_SeismicLines_P\SIS_MERRegApp_SeismicLines_P.axf|2|Seismic Lines"/>
 			<METADATA/>
 			<SYMBOLOGY>
 				<SIMPLELABELRENDERER field="NAME" rotationfield="" visible="false" expression="" language="">
-					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="7"/>
+					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="8"/>
+				</SIMPLELABELRENDERER>
+			</SYMBOLOGY>
+			<SNAPPING vertex="false" edge="false" end="false"/>
+		</LAYER>
+		<LAYER name="DELIVERY.MERRegAppSeismicLines" identify="true" quickcapture="true" quickcapturelabel="Capture DELIVERY.MERRegAppSeismicLines" quickdraw="1">
+			<DATASET name="C:\DSD_MERS\DATA\AXFs\SIS_MERRegApp_SeismicLines_P\SIS_MERRegApp_SeismicLines_P.axf|1|DELIVERY.MERRegAppSeismicLines"/>
+			<METADATA/>
+			<SYMBOLOGY>
+				<SIMPLELABELRENDERER field="NAME" rotationfield="" visible="false" expression="" language="">
+					<TEXTSYMBOL fontcolor="Black" font="Arial" fontstyle="regular" fontsize="8" horzalignment="center" vertalignment="center"/>
 				</SIMPLELABELRENDERER>
 			</SYMBOLOGY>
 			<SNAPPING vertex="false" edge="false" end="false"/>
@@ -34,11 +54,11 @@
 		<MAPGRID quickdraw="0"/>
 		<TRACKLOG quickdraw="0"/>
 		<TOOLBARS>
-			<TOOLBAR name="Favorites" visible="true"/>
 			<TOOLBAR name="Main" visible="true"/>
 			<TOOLBAR name="Browse" visible="true"/>
 			<TOOLBAR name="Draw" visible="true"/>
 			<TOOLBAR name="QuickCapture" visible="true"/>
+			<TOOLBAR name="Navigation" visible="true"/>
 		</TOOLBARS>
 		<REFPOINTS/>
 	</MAP>

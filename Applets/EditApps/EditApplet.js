@@ -6,7 +6,7 @@ var objFile;
 var objNewExpressionsXmlFile;
 var objFunctionsXMLDoc;
 
-var mapLayerName = "MERRegApp_Assessments";
+var mapLayerName = "MASTER.MERRegApp_Assessments";
 var mapLayer = Map.Layers(mapLayerName);
 
 function initiateTimer(){
@@ -89,6 +89,10 @@ var g_ImpactButton = "";
 var g_undoFilter = "";
 
 function editForm_AddScore( objControl ) {
+	//Console.print ( objControl.name );
+	//Console.print ( objControl.name.substring(0, objControl.name.length -2) );
+	//Console.print ( objControl.Parent.Controls(objControl.name.substring(0, objControl.name.length -2) + "Score") );
+
 	objControl.Parent.Controls(objControl.name.substring(0, objControl.name.length -2) + "Score").Text = scoreJSON[objControl.name.substring(objControl.name.length -2)];
 }
 
@@ -134,6 +138,27 @@ function editForm_ImpactChoice( objButton, fromFunction ){
 			vegImpactVisibility(objButton);
 			g_ImpactButton = "Gypcrete";
 			break;
+		case "btnStonyplains":
+			vegImpactVisibility(objButton);
+			g_ImpactButton = "Stonyplains";
+			break;
+		case "btnBreakaways":
+			vegImpactVisibility(objButton);
+			g_ImpactButton = "Breakaways";
+			break;
+		case "btnWetlands":
+			vegImpactVisibility(objButton);
+			g_ImpactButton = "Wetlands";
+			break;
+		case "btnWetlands":
+			vegImpactVisibility(objButton);
+			g_ImpactButton = "Wetlands";
+			break;
+		case "btnMoonplains":
+			vegImpactVisibility(objButton);
+			g_ImpactButton = "Moonplains";
+			break;
+
 	}
 
 	findExistingValue(g_ImpactButton, objButton);
@@ -241,18 +266,20 @@ function page_SetActive( objPage ){
 			objPage.Controls("btnSaltlake_S").visible = false;
 			break;
 		case ("Otway"):
-			objPage.Controls("btnDune_S").visible = false;
+			/*objPage.Controls("btnDune_S").visible = false;
 			objPage.Controls("btnSwalesSandplains_S").visible = false;
 			objPage.Controls("btnLimestoneplains_S").visible = false;
 			objPage.Controls("btnGypcrete_S").visible = false;
-			objPage.Controls("btnSaltlake_S").visible = false;
+			objPage.Controls("btnSaltlake_S").visible = false;*/
 			break;
 		case ("Arckaringa"):
 			objPage.Controls("btnDune_S").visible = false;
-			objPage.Controls("btnSwalesSandplains_S").visible = false;
-			objPage.Controls("btnLimestoneplains_S").visible = false;
-			objPage.Controls("btnGypcrete_S").visible = false;
+			objPage.Controls("btnFloodplain_S").visible = false;
+			objPage.Controls("btnMoonplains_S").visible = false;
 			objPage.Controls("btnSaltlake_S").visible = false;
+			objPage.Controls("btnStonyplains_S").visible = false;
+			objPage.Controls("btnBreakaways_S").visible = false;
+			objPage.Controls("btnWetlands_S").visible = false;
 			break;
 	}
 
@@ -545,12 +572,12 @@ function addFeatureFromForm( objEvent ){
 			if ( objControls("GYPCRETE_VEG").Value ){ GYPCRETE_VEG = objControls("GYPCRETE_VEG").Value }
 			else { GYPCRETE_VEG = null }; 
 
-			var CAMPSITE; 
-			if ( objControls("CAMPSITE").Value ){ CAMPSITE = objControls("CAMPSITE").Value }
-			else { CAMPSITE = null }; 
+//			var CAMPSITE_LAND; 
+//			if ( objControls("CAMPSITE_LAND").Value ){ GYPCRETE_VEG = objControls("CAMPSITE_LAND").Value }
+//			else { CAMPSITE = null }; 
 
-		 	sqlFields = sqlFields + ", SALTLAKE_LAND, SWALESSANDPLAINS_LAND, SWALESSANDPLAINS_VEG, LIMESTONEPLAINS_LAND, LIMESTONEPLAINS_VEG, GYPCRETE_LAND, GYPCRETE_VEG, CAMPSITE";
-
+//		 	sqlFields = sqlFields + ", SALTLAKE_LAND, SWALESSANDPLAINS_LAND, SWALESSANDPLAINS_VEG, LIMESTONEPLAINS_LAND, LIMESTONEPLAINS_VEG, GYPCRETE_LAND, GYPCRETE_VEG, CAMPSITE";
+		 	sqlFields = sqlFields + ", SALTLAKE_LAND, SWALESSANDPLAINS_LAND, SWALESSANDPLAINS_VEG, LIMESTONEPLAINS_LAND, LIMESTONEPLAINS_VEG, GYPCRETE_LAND, GYPCRETE_VEG";
 			sqlValues = sqlValues +
 						SALTLAKE_LAND + ", " +
 						SWALESSANDPLAINS_LAND + ", " +
@@ -558,8 +585,8 @@ function addFeatureFromForm( objEvent ){
 						LIMESTONEPLAINS_LAND + ", " +
 						LIMESTONEPLAINS_VEG + ", " +
 						GYPCRETE_LAND + ", " +
-						GYPCRETE_VEG + ", " +
-						CAMPSITE + ", " ;
+						GYPCRETE_VEG + ", "; // +
+						//CAMPSITE_LAND + ", " ;
 
 			break;
 
@@ -626,8 +653,7 @@ function addFeatureFromForm( objEvent ){
 			break;
 
 		case ("Otway"):
-
-			var LANDSURFACE;
+/*			var LANDSURFACE;
 			if ( objControls("LANDSURFACE").Value ){ LANDSURFACE = objControls("LANDSURFACE").Value }
 			else { LANDSURFACE = null }; 
 
@@ -650,8 +676,8 @@ function addFeatureFromForm( objEvent ){
 						NATIVEVEG_SPECIES + ", " +
 						NONNATIVEVEG_AGIIMPACT + ", " +
 						CAMPSITE + ", " +
-						LANDSURFACE + ", " ;						
-
+						LANDSURFACE + ", " ;	
+					*/
 			break;
 	}
 
@@ -672,8 +698,8 @@ function addFeatureFromForm( objEvent ){
 				"'" + formattedDate + "', " +
 				1;
 
-	var sqlString = "INSERT INTO " +  mapLayerName + " (" + sqlFields + ") VALUES (" + sqlValues + ");";
-	
+	//var sqlString = "INSERT INTO " +  mapLayerName + " (" + sqlFields + ") VALUES (" + sqlValues + ");";
+	var sqlString = "INSERT INTO [MERREGAPP_ASSESSMENTS] (" + sqlFields + ") VALUES (" + sqlValues + ");";
 	var txtFile = Application.CreateAppObject("file");
 	txtFile.Open("c:\\temp\\fieldsLog.txt", 2);
 	txtFile.Write(sqlString);

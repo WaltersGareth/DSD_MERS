@@ -5,28 +5,30 @@ var updaters;
 
 var pointCount = 0;
 
+var deleting = false;
+
 function map_OpenUserLoginForm( eventObj ) {
-	deleteFeatures();
+	//deleteFeatures();
 
 	Applets("DSD").Forms("userLoginForm").show();
 }
 
 
 function deleteFeatures(){
-	var objRecords = Map.Layers("tempPoint").Records;
+	if(deleting == false){
+		deleting = true;
+		
+		var lyr = Map.Layers("TempPoint");
+		var ds = lyr.Datasource;
 
-	pointCount = objRecords.RecordCount;
-
-	if ( objRecords.RecordCount > 0 ) {
-		objRecords.MoveFirst();
-		do {
-			objRecords.Delete();
-			objRecords.MoveNext();
+		if(ds.IsOpen){
+		ds.Execute('Delete from TP;')
 		}
-		while ( !objRecords.EOF );
+
+		Map.Refresh(true);
+		deleting = false;
 	}
 
-	objRecords.Pack();
 }
 
 function userLoginForm_SaveUser( objPage ) {
@@ -131,7 +133,7 @@ function setGeometryForFeature( objEvent ){
 		
 		Map.AddFeatureXY(tx, ty, false);
 
-		Application.Timer.Interval = 5000;
+		Application.Timer.Interval = 10000;
 		Application.Timer.Enabled = true;
 
 		//Map.Scale = 5000;
@@ -212,7 +214,9 @@ function copyFeaturesFromAXF(){
 	dsTemp.Open("C:\\DSD_MERS\\DATA\\AXFs\\" + Application.UserProperties("regionName") + "\\SDE_DEFAULT_CSDLP_world.axf");
 
 	if (dsTemp.IsOpen) {
-		var rs = dsTemp.OpenLayer("MASTER.MERRegApp_Assessments");
+        Console.print ("open");
+        var rs = dsTemp.OpenLayer("MASTER.MERRegApp_Assessments");
+        Console.print (rs.RecordCount);
 
 		if (rs.RecordCount > pointCount) {
 			deleteFeatures();
@@ -228,7 +232,28 @@ function copyFeaturesFromAXF(){
 		else {
 			//Application.Messagebox ("There are no features to copy");
 		}
-	}
+    }
+
+
+
+
+		/*var rs = dsTemp.OpenLayer("MASTER.MERRegApp_Assessments");
+
+		if (rs.RecordCount > pointCount) {
+			deleteFeatures();
+
+			if (rs.RecordCount > 1) {
+				rs.MoveFirst();
+				while(!rs.EOF){
+					Map.AddFeatureXY (parseFloat(rs.Fields("SHAPE_X").value), parseFloat(rs.Fields("SHAPE_Y").value), false);
+					rs.MoveNext();
+				}
+			}
+		}
+		else {
+			//Application.Messagebox ("There are no features to copy");
+		}*/
+	
 	else {
 		Application.MessageBox ( "Couldn't open the MERREGAPP Datasource", apOkOnly)
 	}

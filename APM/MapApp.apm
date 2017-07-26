@@ -1,8 +1,8 @@
 <ArcPad>
-	<MAP name="SIS_MERRegApp_SeismicLines_P">
+	<MAP name="MapApp">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="139.743308031353" miny="-27.8143613654658" maxx="141.465455101463" maxy="-27.0522101164226"/>
+			<ENVELOPE minx="123.023831081311" miny="-38.3617564866353" maxx="148.15749693036" maxy="-26.6344614610353"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 			<PROPERTY name="userName" value="Dragan"/>
@@ -10,70 +10,14 @@
 		<BOOKMARKS>
 			<BOOKMARK name="Bookmark 2" minx="139.296710778491" miny="-27.4803667397696" maxx="139.915136422083" maxy="-27.1918111419769"/>
 		</BOOKMARKS>
-		<LAYER name="tempPoint.shp" identify="true" edit="true" quickcapture="true" quickcapturelabel="Capture tempPoint.shp" showeditform="false" quickdraw="1">
-			<DATASET name="C:\DSD_MERS\DATA\TempData\tempPoint.shp"/>
+		<LAYER name="TempPoint" identify="true" edit="true" quickcapture="true" quickcapturelabel="Capture TempPoint" quickdraw="1">
+			<DATASET name="c:\dsd_mers\DATA\TempValues.axf|1|TempPoint"/>
 			<METADATA/>
 			<SYMBOLOGY>
 				<SIMPLELABELRENDERER field="LINE" rotationfield="" visible="false" expression="" language="">
-					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="7"/>
+					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="8"/>
 				</SIMPLELABELRENDERER>
 			</SYMBOLOGY>
-			<FIELDHISTORY>
-				<FIELDS>
-					<FIELD name="ASSESSOR" value=""/>
-					<FIELD name="VISUAL"/>
-					<FIELD name="FLOODPLA_2"/>
-					<FIELD name="NATIVEVE_2"/>
-					<FIELD name="SHAPE_Y"/>
-					<FIELD name="SALTLAKE_1"/>
-					<FIELD name="GLOBALID" value=""/>
-					<FIELD name="SWALESSA_1"/>
-					<FIELD name="LIMESTON_1"/>
-					<FIELD name="NONNATIV_1"/>
-					<FIELD name="PHOTOLINK" value=""/>
-					<FIELD name="SWALESSA_2"/>
-					<FIELD name="LIMESTON_2"/>
-					<FIELD name="AXF_STATUS"/>
-					<FIELD name="ASSESSOR_1"/>
-					<FIELD name="INFRASTR_1"/>
-					<FIELD name="DUNES_VEG"/>
-					<FIELD name="X"/>
-					<FIELD name="GIBBER_L_1"/>
-					<FIELD name="LAST_EDI_1" value=""/>
-					<FIELD name="Y"/>
-					<FIELD name="AXF_TIME_1"/>
-					<FIELD name="LINE" value=""/>
-					<FIELD name="X_LINE_L_1" value=""/>
-					<FIELD name="CAMPSITE"/>
-					<FIELD name="CREATED__1" value=""/>
-					<FIELD name="LAST_EDI_2"/>
-					<FIELD name="AXF_OBJE_1"/>
-					<FIELD name="OBJECTID"/>
-					<FIELD name="CREATED__2"/>
-					<FIELD name="BREAKAWA_1"/>
-					<FIELD name="MOONPLAI_1"/>
-					<FIELD name="BREAKAWA_2"/>
-					<FIELD name="LANDSURF_1"/>
-					<FIELD name="SURVEY" value=""/>
-					<FIELD name="LITTER"/>
-					<FIELD name="WETLANDS_1"/>
-					<FIELD name="GIBBER_VEG"/>
-					<FIELD name="GPSFIX"/>
-					<FIELD name="X_LINE" value=""/>
-					<FIELD name="UPHOLE"/>
-					<FIELD name="GYPCRETE_1"/>
-					<FIELD name="NOTES" value=""/>
-					<FIELD name="GYPCRETE_2"/>
-					<FIELD name="EASTING"/>
-					<FIELD name="DUNES_LAND"/>
-					<FIELD name="STONYPLA_1"/>
-					<FIELD name="NORTHING"/>
-					<FIELD name="STONYPLA_2"/>
-					<FIELD name="FLOODPLA_1"/>
-					<FIELD name="NATIVEVE_1"/>
-					<FIELD name="SHAPE_X"/>
-				</FIELDS>
-			</FIELDHISTORY>
 			<SNAPPING vertex="false"/>
 		</LAYER>
 		<LAYER name="Seismic Lines" identify="true" quickcapture="true" quickcapturelabel="Capture Seismic Lines" quickdraw="1">
@@ -82,6 +26,16 @@
 			<SYMBOLOGY>
 				<SIMPLELABELRENDERER field="NAME" rotationfield="" visible="false" expression="" language="">
 					<TEXTSYMBOL fontcolor="Black" font="MS Shell Dlg" fontstyle="regular" fontsize="8"/>
+				</SIMPLELABELRENDERER>
+			</SYMBOLOGY>
+			<SNAPPING vertex="false" edge="false" end="false"/>
+		</LAYER>
+		<LAYER name="DELIVERY.MERRegAppSeismicLines" identify="true" quickcapture="true" quickcapturelabel="Capture DELIVERY.MERRegAppSeismicLines" quickdraw="1">
+			<DATASET name="C:\DSD_MERS\DATA\AXFs\SIS_MERRegApp_SeismicLines_P\SIS_MERRegApp_SeismicLines_P.axf|1|DELIVERY.MERRegAppSeismicLines"/>
+			<METADATA/>
+			<SYMBOLOGY>
+				<SIMPLELABELRENDERER field="NAME" rotationfield="" visible="false" expression="" language="">
+					<TEXTSYMBOL fontcolor="Black" font="Arial" fontstyle="regular" fontsize="8" horzalignment="center" vertalignment="center"/>
 				</SIMPLELABELRENDERER>
 			</SYMBOLOGY>
 			<SNAPPING vertex="false" edge="false" end="false"/>
@@ -97,6 +51,7 @@
 			<TOOLBAR name="Browse" visible="true"/>
 			<TOOLBAR name="Draw" visible="true"/>
 			<TOOLBAR name="QuickCapture" visible="true"/>
+			<TOOLBAR name="Navigation" visible="true"/>
 		</TOOLBARS>
 		<REFPOINTS/>
 	</MAP>

@@ -28,11 +28,11 @@
 			</FORM>
 		</FORMS>
 		<SYSTEMOBJECTS>
-			<MAP onopen="map_OpenUserLoginForm(ThisEvent.Object);" onfeatureadded="//setGeometryForFeature( ThisEvent );"/>
+			<MAP onopen="map_OpenUserLoginForm(ThisEvent.Object);"/>
 			<APPLICATION ontimer="copyFeaturesFromAXF();
-if(GPS.isValidFix){
+/*if(GPS.isValidFix){
   addCoordsToTempValues(GPS.X, GPS.Y);
-}"/>
+}*/"/>
 			<GPS onopen="GPS.AutoPanMargin = 1;"/>
 		</SYSTEMOBJECTS>
 		<TOOLBARS>
