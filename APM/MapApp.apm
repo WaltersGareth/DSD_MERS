@@ -2,7 +2,7 @@
 	<MAP name="MapApp">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="123.023831081311" miny="-38.3617564866353" maxx="148.15749693036" maxy="-26.6344614610353"/>
+			<ENVELOPE minx="123.036948860982" miny="-38.3748742663061" maxx="148.170614710031" maxy="-26.6475792407059"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 			<PROPERTY name="userName" value="Dragan"/>

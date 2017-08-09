@@ -213,9 +213,15 @@ function copyFeaturesFromAXF(){
 	var dsTemp = Application.CreateAppObject("DataSource");
 	dsTemp.Open("C:\\DSD_MERS\\DATA\\AXFs\\" + Application.UserProperties("regionName") + "\\SDE_DEFAULT_CSDLP_world.axf");
 
+	var layerName = "MASTER.MERRegApp_Assessments";
+
 	if (dsTemp.IsOpen) {
         Console.print ("open");
-        var rs = dsTemp.OpenLayer("MASTER.MERRegApp_Assessments");
+		if (Application.UserProperties("regionName") == "Arckaringa"){
+			layerName = "MERRegApp_Assessments"
+		}
+
+        var rs = dsTemp.OpenLayer(layerName);
         Console.print (rs.RecordCount);
 
 		if (rs.RecordCount > pointCount) {

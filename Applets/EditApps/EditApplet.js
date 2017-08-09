@@ -266,11 +266,6 @@ function page_SetActive( objPage ){
 			objPage.Controls("btnSaltlake_S").visible = false;
 			break;
 		case ("Otway"):
-			/*objPage.Controls("btnDune_S").visible = false;
-			objPage.Controls("btnSwalesSandplains_S").visible = false;
-			objPage.Controls("btnLimestoneplains_S").visible = false;
-			objPage.Controls("btnGypcrete_S").visible = false;
-			objPage.Controls("btnSaltlake_S").visible = false;*/
 			break;
 		case ("Arckaringa"):
 			objPage.Controls("btnDune_S").visible = false;

@@ -17,7 +17,6 @@
 						<LISTITEM value="Cooper" text="Cooper"/>
 						<LISTITEM value="Officer" text="Officer"/>
 						<LISTITEM value="Otway" text="Otway"/>
-						<LISTITEM value="Leigh Creek" text="Leigh Creek"/>
 					</COMBOBOX>
 				</PAGE>
 			</FORM>
