@@ -7,7 +7,7 @@
 			<SNAPPING tolerance="5"/>
 		</PROPERTIES>
 		<BOOKMARKS>
-			<BOOKMARK name="Bookmark 2" minx="139.296710778491" miny="-27.4803667397696" maxx="139.915136422083" maxy="-27.1918111419769"/>
+			<BOOKMARK name="Cooper" minx="139.296710778491" miny="-27.4803667397696" maxx="139.915136422083" maxy="-27.1918111419769"/>
 		</BOOKMARKS>
 		<LAYER name="MASTER.MERRegApp_Assessments" identify="true" edit="true" quickcapture="false" quickcapturelabel="Capture MASTER.MERRegApp_Assessments" quickdraw="1">
 			<DATASET name="c:\dsd_mers\DATA\AXFs\Cooper\SDE_DEFAULT_CSDLP_world.axf|1|MASTER.MERRegApp_Assessments"/>

@@ -2,11 +2,13 @@
 	<MAP name="">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="125.644459836049" miny="-39.1796634981983" maxx="153.582633192627" maxy="-26.1437934664756"/>
+			<ENVELOPE minx="128.358757379364" miny="-30.089625128143" maxx="134.233898980076" maxy="-27.3483012288545"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 		</PROPERTIES>
-		<BOOKMARKS/>
+		<BOOKMARKS>
+			<BOOKMARK name="Arckaringa" minx="128.358757379364" miny="-30.089625128143" maxx="134.233898980076" maxy="-27.3483012288545"/>
+		</BOOKMARKS>
 		<LAYER name="MERRegApp_Assessments" identify="true" edit="true" quickcapture="false" quickcapturelabel="Capture MASTER.MERRegApp_Assessments" quickdraw="1">
 			<DATASET name="C:\DSD_MERS\DATA\AXFs\Arckaringa\SDE_DEFAULT_CSDLP_world.axf|1|MASTER.MERRegApp_Assessments"/>
 			<METADATA/>

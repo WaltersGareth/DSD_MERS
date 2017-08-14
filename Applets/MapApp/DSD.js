@@ -19,7 +19,12 @@ function deleteFeatures(){
 		deleting = true;
 		
 		var lyr = Map.Layers("TempPoint");
-		var ds = lyr.Datasource;
+		try {
+			var ds = lyr.Datasource;
+		}
+		catch(e){
+			Application.MessageBox("Jack the issue is: not connecting to your TemPoint layer", apOkOnly)
+		}
 
 		if(ds.IsOpen){
 		ds.Execute('Delete from TP;')
@@ -63,21 +68,24 @@ function userLoginForm_SaveUser( objPage ) {
 
 	var rect = Application.CreateAppObject("Rectangle");
 
+	Console.print ("length: " + bs.length);
+
 	if (bs.length == 0){
-		Application.MessageBox("There is no bookmark");
+		Application.MessageBox("There is no bookmark. You need to add bookmarks to MapApp.apm", apOkOnly);
 	}
 	else
 	{
-
 		for ( var b = 0; b < bs.length; b++ ) {
-			 if (bs.item(b).getAttribute("name") == regionName) {
+			Console.print(bs.item(b).getAttribute("name") + ", " + regionName)
+			if (bs.item(b).getAttribute("name") == regionName) {
 				rect.left = bs.item(b).getAttribute("minx");
 				rect.bottom = bs.item(b).getAttribute("miny");
 				rect.right = bs.item(b).getAttribute("maxx");
 				rect.top = bs.item(b).getAttribute("maxy");
 				Map.extent = rect;
 				Application.userProperties("bookmarkExtent") = [rect.left, rect.bottom, rect.right, rect.top]
-				Application.MessageBox ( Application.userProperties("bookmarkExtent") );
+				//Application.MessageBox ( Application.userProperties("bookmarkExtent") );
+				break;
 			}
 		}
 	}
@@ -216,13 +224,13 @@ function copyFeaturesFromAXF(){
 	var layerName = "MASTER.MERRegApp_Assessments";
 
 	if (dsTemp.IsOpen) {
-        Console.print ("open");
+        //Console.print ("open");
 		if (Application.UserProperties("regionName") == "Arckaringa"){
 			layerName = "MERRegApp_Assessments"
 		}
 
         var rs = dsTemp.OpenLayer(layerName);
-        Console.print (rs.RecordCount);
+        //Console.print (rs.RecordCount);
 
 		if (rs.RecordCount > pointCount) {
 			deleteFeatures();

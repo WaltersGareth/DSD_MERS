@@ -2,11 +2,13 @@
 	<MAP name="">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="136.12826746817" miny="-36.0924005604597" maxx="141.099358913598" maxy="-33.7729038213091"/>
+			<ENVELOPE minx="136.129564725854" miny="-36.0936978181438" maxx="141.100656171282" maxy="-33.7742010789932"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 		</PROPERTIES>
-		<BOOKMARKS/>
+		<BOOKMARKS>
+			<BOOKMARK name="Otway" minx="136.129564725854" miny="-36.0936978181438" maxx="141.100656171282" maxy="-33.7742010789932"/>
+		</BOOKMARKS>
 		<LAYER name="MASTER.MERRegApp_Assessments" identify="true" edit="true" quickcapture="false" quickcapturelabel="Capture MASTER.MERRegApp_Assessments" quickdraw="1">
 			<DATASET name="C:\DSD_MERS\DATA\AXFs\Otway\SDE_DEFAULT_CSDLP_world.axf|1|MASTER.MERRegApp_Assessments"/>
 			<METADATA/>

@@ -2,11 +2,13 @@
 	<MAP name="">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="122.369594138987" miny="-38.7117339139654" maxx="148.868437766154" maxy="-26.3474509271766"/>
+			<ENVELOPE minx="127.339875443511" miny="-30.3669072426691" maxx="134.068329026696" maxy="-27.2274304663815"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 		</PROPERTIES>
-		<BOOKMARKS/>
+		<BOOKMARKS>
+			<BOOKMARK name="Officer" minx="127.339875443512" miny="-30.3669072426691" maxx="134.068329026696" maxy="-27.2274304663816"/>
+		</BOOKMARKS>
 		<LAYER name="MASTER.MERRegApp_Assessments" identify="true" edit="true" quickcapture="false" quickcapturelabel="Capture MASTER.MERRegApp_Assessments" quickdraw="1">
 			<DATASET name="C:\DSD_MERS\DATA\AXFs\Officer\SDE_DEFAULT_CSDLP_world.axf|1|MASTER.MERRegApp_Assessments"/>
 			<METADATA/>

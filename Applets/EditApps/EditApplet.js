@@ -17,7 +17,13 @@ function initiateTimer(){
 function getTimer(){
 
 	var dsTemp = Application.CreateAppObject("DataSource");
-	dsTemp.Open("C:\\DSD_MERS\\DATA\\TempValues.axf");
+
+	try	{
+		dsTemp.Open("C:\\DSD_MERS\\DATA\\TempValues.axf");
+	}
+	catch(e){
+		Application.MessageBox( "Jack your issue is: its not opening the TempValues.AXF", apOkOnly);
+	}
 
 	if ( dsTemp.IsOpen ) {
 		var updaters = dsTemp.Execute("SELECT [userName], [newGeometryX], [newGeometryY], [region] FROM [TEMPVALUES];");

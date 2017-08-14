@@ -2,13 +2,16 @@
 	<MAP name="MapApp">
 		<COMMENTS/>
 		<PROPERTIES>
-			<ENVELOPE minx="123.036948860982" miny="-38.3748742663061" maxx="148.170614710031" maxy="-26.6475792407059"/>
+			<ENVELOPE minx="137.561736546354" miny="-34.5285234992955" maxx="141.415337885207" maxy="-32.7304443777223"/>
 			<COORDSYS string="GEOGCS[&quot;GCS_GDA_1994&quot;,DATUM[&quot;D_GDA_1994&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]]"/>
 			<SNAPPING tolerance="5"/>
 			<PROPERTY name="userName" value="Dragan"/>
 		</PROPERTIES>
 		<BOOKMARKS>
-			<BOOKMARK name="Bookmark 2" minx="139.296710778491" miny="-27.4803667397696" maxx="139.915136422083" maxy="-27.1918111419769"/>
+			<BOOKMARK name="Arckaringa" minx="136.006346488141" miny="-29.8898204331499" maxx="144.243666503545" maxy="-26.0463109896367"/>
+			<BOOKMARK name="Cooper" minx="131.159469891706" miny="-31.2061423361474" maxx="140.151206349029" maxy="-27.01062438581"/>
+			<BOOKMARK name="Officer" minx="132.910649756142" miny="-33.8757431307914" maxx="140.851404030142" maxy="-30.1706103954285"/>
+			<BOOKMARK name="Otway" minx="137.561736546354" miny="-34.5285234992955" maxx="141.415337885207" maxy="-32.7304443777223"/>
 		</BOOKMARKS>
 		<LAYER name="TempPoint" identify="true" edit="true" quickcapture="true" quickcapturelabel="Capture TempPoint" quickdraw="1">
 			<DATASET name="c:\dsd_mers\DATA\TempValues.axf|1|TempPoint"/>
